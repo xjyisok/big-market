@@ -18,8 +18,16 @@ services:
       - "3306:3306"
     volumes:
       - ./sql:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD","mysqladmin","ping","-h","localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+      start_period: 15s
     volumes_from:
       - mysql-job-dbdata
+    networks:
+      - my-network
 
   # 自动加载数据
   mysql-job-dbdata:
@@ -27,3 +35,23 @@ services:
     container_name: mysql-job-dbdata
     volumes:
       - /var/lib/mysql
+    networks:
+      - my-network
+  phpmyadmin:
+    image: phpmyadmin:5.2.0
+    container_name: phpmyadmin
+    hostname: phpmyadmin
+    ports:
+      - 8899:80
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - MYSQL_ROOT_PASSWORD=123456
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - my-network
+networks:
+  my-network:
+    driver: bridge
