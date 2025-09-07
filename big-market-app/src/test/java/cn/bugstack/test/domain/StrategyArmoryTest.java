@@ -1,6 +1,7 @@
 package cn.bugstack.test.domain;
 
 import cn.bugstack.domain.strategy.service.armory.IStrategyArmory;
+import cn.bugstack.domain.strategy.service.armory.IStrategyDisPatch;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,13 +16,15 @@ import javax.annotation.Resource;
 public class StrategyArmoryTest {
     @Resource
     IStrategyArmory strategyArmory;
+    @Resource
+    IStrategyDisPatch strategyDisPatch;
     @Test
     public void test_strategy_armory() {
         strategyArmory.assembleLotteryStrategy(100002L);
     }
     @Test
     public void test_getrandomaward() {
-        log.info("奖品ID{}",strategyArmory.getRandomAwardId(100002L));
+        log.info("奖品ID{}",strategyDisPatch.getRandomAwardId(100002L));
     }
 
 }
