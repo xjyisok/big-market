@@ -1,12 +1,12 @@
-package cn.bugstack.domain.strategy.service.rule.Impl;
+package cn.bugstack.domain.strategy.service.rule.filter.Impl;
 
 import cn.bugstack.domain.strategy.model.entity.RuleActionEntity;
 import cn.bugstack.domain.strategy.model.entity.RuleMatterEntity;
 import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import cn.bugstack.domain.strategy.respository.IStrategyRespository;
 import cn.bugstack.domain.strategy.service.annotation.LogicStrategy;
-import cn.bugstack.domain.strategy.service.rule.ILogicFilter;
-import cn.bugstack.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import cn.bugstack.domain.strategy.service.rule.filter.ILogicFilter;
+import cn.bugstack.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import cn.bugstack.types.common.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -43,10 +43,12 @@ public class RuleWeightLogicFilter implements ILogicFilter<RuleActionEntity.Raff
 
         String userId = ruleMatterEntity.getUserId();
         Long strategyId = ruleMatterEntity.getStrategyId();
-        String ruleValue = repository.queryStrategyRuleValue(ruleMatterEntity.getStrategyId(), ruleMatterEntity.getAwardId(), ruleMatterEntity.getRuleModel());
-
+        String ruleValue = repository.
+                queryStrategyRuleValue(ruleMatterEntity.getStrategyId(), ruleMatterEntity.getAwardId(), ruleMatterEntity.getRuleModel());
+        //ruleValue=4000:102,103,104,105 5000:102,103,104,105,106,107 6000:102,103,104,105,106,107,108,109
         // 1. 根据用户ID查询用户抽奖消耗的积分值，本章节我们先写死为固定的值。后续需要从数据库中查询。
         Map<Long, String> analyticalValueGroup = getAnalyticalValue(ruleValue);
+        //依旧解析{4000：“102,103,104,105 5000”，5000:“102,103,104,105,106"，6000:102,103,104,105,106,107,108,109}
         if (null == analyticalValueGroup || analyticalValueGroup.isEmpty()) {
             return RuleActionEntity.<RuleActionEntity.RaffleBeforeEntity>builder()
                     .code(RuleLogicCheckTypeVO.ALLOW.getCode())
@@ -56,11 +58,11 @@ public class RuleWeightLogicFilter implements ILogicFilter<RuleActionEntity.Raff
 
         // 2. 转换Keys值，并默认排序
         List<Long> analyticalSortedKeys = new ArrayList<>(analyticalValueGroup.keySet());
-        Collections.sort(analyticalSortedKeys);
-
+        Collections.sort(analyticalSortedKeys,Collections.reverseOrder());
+        //{4000,5000,6000}
         // 3. 找出最小符合的值，也就是【4500 积分，能找到 4000:102,103,104,105】、【5000 积分，能找到 5000:102,103,104,105,106,107】
         Long nextValue = analyticalSortedKeys.stream()
-                .filter(key -> userScore >= key)
+                .filter(key -> key<=userScore)
                 .findFirst()
                 .orElse(null);
 

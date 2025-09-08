@@ -1,16 +1,15 @@
-package cn.bugstack.domain.strategy.service.rule.Impl;
+package cn.bugstack.domain.strategy.service.rule.filter.Impl;
 
 import cn.bugstack.domain.strategy.model.entity.RuleActionEntity;
 import cn.bugstack.domain.strategy.model.entity.RuleMatterEntity;
 import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import cn.bugstack.domain.strategy.respository.IStrategyRespository;
 import cn.bugstack.domain.strategy.service.annotation.LogicStrategy;
-import cn.bugstack.domain.strategy.service.rule.ILogicFilter;
-import cn.bugstack.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import cn.bugstack.domain.strategy.service.rule.filter.ILogicFilter;
+import cn.bugstack.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import cn.bugstack.types.common.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
@@ -27,9 +26,11 @@ public class RuleBackListLogicFilter implements ILogicFilter<RuleActionEntity.Ra
 
         // 查询规则值配置
         String ruleValue = respository.queryStrategyRuleValue(ruleMatterEntity.getStrategyId(), ruleMatterEntity.getAwardId(), ruleMatterEntity.getRuleModel());
+        //ruleValue="100:user000,user001,user002"
         String[] splitRuleValue = ruleValue.split(Constants.COLON);
+        //splitRuleValue=["100","user000,user001,user002"]
         Integer awardId = Integer.parseInt(splitRuleValue[0]);
-
+        //awardId=100;
         // 过滤其他规则
         String[] userBlackIds = splitRuleValue[1].split(Constants.SPLIT);
         for (String userBlackId : userBlackIds) {
@@ -45,7 +46,7 @@ public class RuleBackListLogicFilter implements ILogicFilter<RuleActionEntity.Ra
                         .build();
             }
         }
-
+        //如果用户在解析出来的黑名单用户上就返回接管否则返回允许直接进行抽奖
         return RuleActionEntity.<RuleActionEntity.RaffleBeforeEntity>builder()
                 .code(RuleLogicCheckTypeVO.ALLOW.getCode())
                 .info(RuleLogicCheckTypeVO.ALLOW.getInfo())
