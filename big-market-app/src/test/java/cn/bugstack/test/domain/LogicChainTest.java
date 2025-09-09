@@ -1,11 +1,11 @@
-package cn.bugstack.test;
+package cn.bugstack.test.domain;
 
 import cn.bugstack.domain.strategy.service.armory.IStrategyArmory;
 import cn.bugstack.domain.strategy.service.rule.chain.ILogicChain;
 import cn.bugstack.domain.strategy.service.rule.chain.Impl.RuleWeightLogicChain;
 
 import cn.bugstack.domain.strategy.service.rule.chain.factory.DefaultLogicChainFactory;
-
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,9 +43,9 @@ public class LogicChainTest {
 
     @Test
     public void test_LogicChain_rule_blacklist() {
-        ILogicChain logicChain = defaultChainFactory.openLogicChain(100001L);
-        DefaultLogicChainFactory.StrategyAwardVO strategyAwardVO = logicChain.logic("user001", 100001L);
-        log.info("测试结果：{}", strategyAwardVO.getAwardId());
+        ILogicChain logicChain = defaultChainFactory.openLogicChain(100003L);
+        DefaultLogicChainFactory.StrategyAwardVO strategyAwardVO = logicChain.logic("user001", 100003L);
+        log.info("测试结果：{}", JSON.toJSONString(strategyAwardVO));
     }
 
     @Test
@@ -54,15 +54,15 @@ public class LogicChainTest {
         ReflectionTestUtils.setField(ruleWeightLogicChain, "userScore", 4900L);
 
         ILogicChain logicChain = defaultChainFactory.openLogicChain(100001L);
-        DefaultLogicChainFactory.StrategyAwardVO strategyAwardVO  = logicChain.logic("xiaofuge", 100001L);
-        log.info("测试结果：{}", strategyAwardVO.getAwardId());
+        DefaultLogicChainFactory.StrategyAwardVO strategyAwardVO = logicChain.logic("xiaofuge", 100001L);
+        log.info("测试结果：{}", JSON.toJSONString(strategyAwardVO));
     }
 
     @Test
     public void test_LogicChain_rule_default() {
         ILogicChain logicChain = defaultChainFactory.openLogicChain(100001L);
         DefaultLogicChainFactory.StrategyAwardVO strategyAwardVO = logicChain.logic("xiaofuge", 100001L);
-        log.info("测试结果：{}", strategyAwardVO.getAwardId());
+        log.info("测试结果：{}", JSON.toJSONString(strategyAwardVO));
     }
 
 }

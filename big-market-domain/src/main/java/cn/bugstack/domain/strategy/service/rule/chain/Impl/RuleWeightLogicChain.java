@@ -5,6 +5,7 @@ import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import cn.bugstack.domain.strategy.respository.IStrategyRespository;
 import cn.bugstack.domain.strategy.service.armory.IStrategyDisPatch;
 import cn.bugstack.domain.strategy.service.rule.chain.AbstractLogicChain;
+import cn.bugstack.domain.strategy.service.rule.chain.factory.DefaultLogicChainFactory;
 import cn.bugstack.domain.strategy.service.rule.filter.factory.DefaultLogicFactory;
 import cn.bugstack.types.common.Constants;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +23,7 @@ public class RuleWeightLogicChain extends AbstractLogicChain {
     @Resource
     private IStrategyDisPatch strategyDisPatch;
     @Override
-    public Integer logic(String userId, Long strategyId) {
+    public DefaultLogicChainFactory.StrategyAwardVO logic(String userId, Long strategyId) {
         log.info("抽奖责任链-权重策略开始userId:{},strategyId:{},rulemodel:{}",userId,strategyId,getruleModel() );
         String ruleValue = respository.
                 queryStrategyRuleValue(strategyId, getruleModel());
@@ -40,7 +41,11 @@ public class RuleWeightLogicChain extends AbstractLogicChain {
                 .orElse(null);
         if (null != nextValue) {
             log.info("抽奖责任链-权重策略接管userId:{},strategyId:{},rulemodel:{}",userId,strategyId,getruleModel() );
-            return strategyDisPatch.getRandomAwardId(strategyId,analyticalValueGroup.get(nextValue));
+            return DefaultLogicChainFactory.StrategyAwardVO.builder()
+                    .awardId(strategyDisPatch.getRandomAwardId(strategyId,analyticalValueGroup.get(nextValue)))
+                    .logicModel(getruleModel())
+                    .build();
+            //return strategyDisPatch.getRandomAwardId(strategyId,analyticalValueGroup.get(nextValue));
         }
         log.info("抽奖责任链-权重策略放行userId:{},strategyId:{},rulemodel:{}",userId,strategyId,getruleModel() );
         return next().logic(userId, strategyId);

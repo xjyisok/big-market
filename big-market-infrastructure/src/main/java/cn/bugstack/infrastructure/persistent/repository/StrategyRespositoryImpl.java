@@ -3,14 +3,10 @@ package cn.bugstack.infrastructure.persistent.repository;
 import cn.bugstack.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.bugstack.domain.strategy.model.entity.StrategyEntity;
 import cn.bugstack.domain.strategy.model.entity.StrategyRuleEntity;
-import cn.bugstack.domain.strategy.model.vo.StrategyAwardRuleModelVO;
+import cn.bugstack.domain.strategy.model.vo.*;
 import cn.bugstack.domain.strategy.respository.IStrategyRespository;
-import cn.bugstack.infrastructure.persistent.dao.IStrategyAwardDao;
-import cn.bugstack.infrastructure.persistent.dao.IStrategyDao;
-import cn.bugstack.infrastructure.persistent.dao.IStrategyRuleDao;
-import cn.bugstack.infrastructure.persistent.po.Strategy;
-import cn.bugstack.infrastructure.persistent.po.StrategyAward;
-import cn.bugstack.infrastructure.persistent.po.StrategyRule;
+import cn.bugstack.infrastructure.persistent.dao.*;
+import cn.bugstack.infrastructure.persistent.po.*;
 import cn.bugstack.infrastructure.persistent.redis.IRedisService;
 import cn.bugstack.types.common.Constants;
 import lombok.extern.slf4j.Slf4j;
@@ -35,6 +31,13 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
     IStrategyRuleDao strategyRuleDao;
     @Autowired
     IStrategyDao strategyDao;
+    @Autowired
+    IRuleTreeDao ruleTreeDao;
+    @Autowired
+    IRuleTreeNodeLineDao ruleTreeNodeLineDao;
+    @Autowired
+    IRuleTreeNodeDao ruleTreeNodeDao;
+
     @Override
     public List<StrategyAwardEntity> queryStrategyAwardList(Long strategyId) {
         String cache = Constants.RedisKey.STRATEGY_AWARD_KEY+strategyId;
@@ -137,6 +140,49 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
         strategyRule.setStrategyId(strategyId);
         strategyRule.setRuleModel(ruleModel);
         return strategyRuleDao.queryStrategyRuleValue(strategyRule);
+    }
+    @Override
+    public RuleTreeVO queryRuleTreeVOByTreeId(String treeId) {
+        String cachekey=Constants.RedisKey.RULE_TREE_VO_KEY+treeId;
+        RuleTreeVO ruleTreeVO=redisService.getValue(cachekey);
+        if(ruleTreeVO!=null){
+            return ruleTreeVO;
+        }
+        RuleTree ruletree=ruleTreeDao.queryRuleTreeByTreeId(treeId);
+        List<RuleTreeNode> ruleTreeNodeList=ruleTreeNodeDao.queryRuleTreeNodeListByTreeId(treeId);
+        List<RuleTreeNodeLine>ruleTreeNodeLineList=ruleTreeNodeLineDao.queryRuleTreeNodeLineListByTreeId(treeId);
+        Map<String, List<RuleTreeNodeLineVO>>ruleTreeNodeLineMap=new HashMap<>();
+        for(RuleTreeNodeLine ruleTreeNodeLine:ruleTreeNodeLineList){
+            RuleTreeNodeLineVO ruleTreeNodeLineVO=RuleTreeNodeLineVO.builder()
+                    .treeId(treeId)
+                    .ruleNodeFrom(ruleTreeNodeLine.getRuleNodeFrom())
+                    .ruleNodeTo(ruleTreeNodeLine.getRuleNodeTo())
+                    .ruleLimitType(RuleLimitTypeVO.valueOf(ruleTreeNodeLine.getRuleLimitType()))
+                    .ruleLimitValue(RuleLogicCheckTypeVO.valueOf(ruleTreeNodeLine.getRuleLimitValue()))
+                    .build();
+            List<RuleTreeNodeLineVO>ruleTreeNodeLineVOList=ruleTreeNodeLineMap.computeIfAbsent(ruleTreeNodeLine.getRuleNodeFrom(), k -> new ArrayList<>());
+            ruleTreeNodeLineVOList.add(ruleTreeNodeLineVO);
+        }
+        Map<String,RuleTreeNodeVO>ruleTreeNodeVOMap=new HashMap<>();
+        for(RuleTreeNode ruleTreeNode:ruleTreeNodeList){
+            RuleTreeNodeVO ruleTreeNodeVO=RuleTreeNodeVO.builder()
+                    .treeId(treeId)
+                    .ruleKey(ruleTreeNode.getRuleKey())
+                    .ruleDesc(ruleTreeNode.getRuleDesc())
+                    .ruleValue(ruleTreeNode.getRuleValue())
+                    .treeNodeLineVOList(ruleTreeNodeLineMap.get(ruleTreeNode.getRuleKey()))
+                    .build();
+            ruleTreeNodeVOMap.put(ruleTreeNode.getRuleKey(),ruleTreeNodeVO);
+        }
+        RuleTreeVO ruleTreeVONew=RuleTreeVO.builder()
+                .treeId(treeId)
+                .treeName(ruletree.getTreeName())
+                .treeDesc(ruletree.getTreeDesc())
+                .treeRootRuleNode(ruletree.getTreeRootRuleKey())
+                .treeNodeMap(ruleTreeNodeVOMap)
+                .build();
+        redisService.setValue(cachekey, ruleTreeVONew);
+        return ruleTreeVONew;
     }
 }
 
