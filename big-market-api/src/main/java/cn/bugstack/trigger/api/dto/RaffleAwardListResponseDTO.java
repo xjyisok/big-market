@@ -1,4 +1,4 @@
-package cn.bugstack.domain.strategy.model.entity;
+package cn.bugstack.trigger.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,11 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RaffleAwardEntity {
-    //private Long strategyId;
+public class RaffleAwardListResponseDTO {
     private Integer awardId;
-    //private String awardKey;
-    private String awardConfig;
-    //private String awardDesc;
+    private String awardTitle;
+    private String awardSubtitle;
     private Integer sort;
 }

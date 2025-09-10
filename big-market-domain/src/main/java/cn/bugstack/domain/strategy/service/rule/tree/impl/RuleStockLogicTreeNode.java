@@ -28,6 +28,7 @@ public class RuleStockLogicTreeNode implements ILogicTreeNode {
     public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId,String rulevalue) {
         log.info("规则过滤-库存扣减userId:{},strategyId:{},awardId:{}", userId, strategyId, awardId);
         Boolean issubstratctsucceed=strategyDisPatch.substractAwardCount(strategyId, awardId);
+        System.out.println(issubstratctsucceed);
         if(issubstratctsucceed){
             strategyRespository.awardStockConsumeSendQueue(StrategyAwardStockModelVO.builder()
                             .awardId(awardId)
