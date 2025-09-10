@@ -6,6 +6,7 @@ import cn.bugstack.domain.strategy.model.entity.RuleMatterEntity;
 import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import cn.bugstack.domain.strategy.model.vo.RuleTreeVO;
 import cn.bugstack.domain.strategy.model.vo.StrategyAwardRuleModelVO;
+import cn.bugstack.domain.strategy.model.vo.StrategyAwardStockModelVO;
 import cn.bugstack.domain.strategy.respository.IStrategyRespository;
 import cn.bugstack.domain.strategy.service.AbstractRaffleStrategy;
 import cn.bugstack.domain.strategy.service.armory.IStrategyDisPatch;
@@ -151,5 +152,15 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy {
             }
         }
         return ruleActionEntity;
+    }
+
+    @Override
+    public StrategyAwardStockModelVO takeQueueValue() throws InterruptedException {
+        return respository.takeQueueValue();
+    }
+
+    @Override
+    public void updateStrategyAwardStock(Long strategyId, Integer awardId) {
+        respository.updateStrategyAwardStock(strategyId,awardId);
     }
 }

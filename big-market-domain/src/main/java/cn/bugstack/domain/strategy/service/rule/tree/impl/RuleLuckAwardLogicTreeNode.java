@@ -16,12 +16,19 @@ import org.springframework.stereotype.Component;
 @Component("rule_luck_award")
 public class RuleLuckAwardLogicTreeNode implements ILogicTreeNode {
     @Override
-    public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId) {
+    public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId,String rulevalue) {
+        log.info("规则过滤-保底奖励userId:{},strategyId:{},awardId:{}", userId, strategyId, awardId);
+        String[] split = rulevalue.split(":");
+        if(split.length == 0){
+            log.error("规则过滤-保底奖励配置异常userId:{},strategyId:{},awardId:{}\", userId, strategyId, awardId");
+        }
+        Integer AwardId=Integer.parseInt(split[0]);
+        String RuleValue=split.length>1?split[1]:"";
         return DefaultTreeFactory.TreeActionEntity.builder()
                 .ruleLogicCheckType(RuleLogicCheckTypeVO.TAKE_OVER)
                 .strategyAwardData(DefaultTreeFactory.StrategyAwardVO.builder()
-                        .awardId(101)
-                        .awardRuleValue("1,100")
+                        .awardId(AwardId)
+                        .awardRuleValue(RuleValue)
                         .build())
                 .build();
 

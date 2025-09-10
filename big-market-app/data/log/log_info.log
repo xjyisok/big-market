@@ -1,333 +1,676 @@
-25-09-09.16:33:08.659 [main            ] INFO  LogicTreeTest          - Starting LogicTreeTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 30908 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.16:33:08.660 [main            ] INFO  LogicTreeTest          - The following 1 profile is active: "dev"
-25-09-09.16:33:09.438 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.16:33:09.442 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.16:33:09.486 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
-25-09-09.16:33:10.358 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.16:33:10.769 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.16:33:10.782 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.16:33:12.468 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.16:33:12.519 [main            ] INFO  LogicTreeTest          - Started LogicTreeTest in 4.235 seconds (JVM running for 5.126)
-25-09-09.16:33:12.747 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】treeId:100000001 node:rule_lock code:0000
-25-09-09.16:33:12.748 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】treeId:100000001 node:rule_stock code:0001
-25-09-09.16:33:12.749 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【决策树规则；增加dall-e-3画图模型】treeId:100000001 node:rule_luck_award code:0001
-25-09-09.16:33:12.889 [main            ] INFO  LogicTreeTest          - 测试结果：{"awardId":101,"awardRuleValue":"1,100"}
-25-09-09.21:22:36.829 [main            ] INFO  LogicChainTest         - Starting LogicChainTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 20288 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:22:36.830 [main            ] INFO  LogicChainTest         - The following 1 profile is active: "dev"
-25-09-09.21:22:37.625 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:22:37.628 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:22:37.655 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-25-09-09.21:22:38.359 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:22:38.704 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:22:38.716 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:22:40.420 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:22:40.469 [main            ] INFO  LogicChainTest         - Started LogicChainTest in 4.059 seconds (JVM running for 4.908)
-25-09-09.21:22:40.797 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:22:41.135 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:22:41.216 [main            ] INFO  LogicChainTest         - 测试结果：true
-25-09-09.21:22:41.223 [main            ] INFO  LogicChainTest         - 测试结果：true
-25-09-09.21:22:41.232 [main            ] INFO  LogicChainTest         - 测试结果：true
-25-09-09.21:22:41.252 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:22:41.269 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:25:25.207 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 27612 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:25:25.208 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.21:25:25.907 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:25:25.910 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:25:25.937 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
-25-09-09.21:25:26.640 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:25:26.984 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:25:26.997 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:25:28.718 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:25:28.765 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.98 seconds (JVM running for 4.73)
-25-09-09.21:25:29.087 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:25:29.344 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:25:29.414 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:25:29.437 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:25:29.444 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
-25-09-09.21:25:29.609 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
-25-09-09.21:25:29.612 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
-25-09-09.21:25:29.626 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:25:29.642 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:26:00.870 [main            ] INFO  LogicChainTest         - Starting LogicChainTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 12012 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:26:00.872 [main            ] INFO  LogicChainTest         - The following 1 profile is active: "dev"
-25-09-09.21:26:01.555 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:26:01.558 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:26:01.585 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-25-09-09.21:26:02.299 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:26:02.655 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:26:02.668 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:26:04.407 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:26:04.457 [main            ] INFO  LogicChainTest         - Started LogicChainTest in 4.043 seconds (JVM running for 4.923)
-25-09-09.21:26:04.792 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:26:05.049 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:26:05.118 [main            ] INFO  LogicChainTest         - 测试结果：true
-25-09-09.21:26:05.125 [main            ] INFO  LogicChainTest         - 测试结果：true
-25-09-09.21:26:05.132 [main            ] INFO  LogicChainTest         - 测试结果：true
-25-09-09.21:26:05.153 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:26:05.157 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:26:31.476 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 1960 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:26:31.478 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.21:26:32.174 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:26:32.177 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:26:32.205 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-25-09-09.21:26:32.962 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:26:33.314 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:26:33.326 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:26:35.055 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:26:35.105 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.035 seconds (JVM running for 4.782)
-25-09-09.21:26:35.453 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:26:35.732 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:26:35.811 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:26:35.817 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:26:35.823 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
-25-09-09.21:26:35.984 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
-25-09-09.21:26:35.987 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
-25-09-09.21:26:36.002 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:26:36.018 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:28:22.719 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 14252 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:28:22.720 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.21:28:23.417 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:28:23.419 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:28:23.447 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-25-09-09.21:28:24.170 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:28:24.525 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:28:24.538 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:28:26.287 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:28:26.333 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.01 seconds (JVM running for 4.75)
-25-09-09.21:28:26.662 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:28:26.921 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:28:26.993 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:28:26.999 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:28:27.002 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始userId:user003,strategyId:100001,rulemodel:rule_blacklist
-25-09-09.21:28:27.020 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管userId:user003,strategyId:100001,rulemodel:rule_blacklist
-25-09-09.21:28:27.021 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 user003 100001 100 rule_blacklist
-25-09-09.21:28:27.189 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100001,"userId":"user003"}
-25-09-09.21:28:27.191 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":100}
-25-09-09.21:28:27.256 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:28:27.261 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:28:27.310 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:28:27.314 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:28:27.317 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
-25-09-09.21:28:27.317 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
-25-09-09.21:28:27.317 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
-25-09-09.21:28:27.326 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:28:27.341 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:40:51.360 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 2360 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:40:51.362 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.21:40:52.096 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:40:52.099 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:40:52.127 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
-25-09-09.21:40:52.855 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:40:53.207 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:40:53.220 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:40:55.071 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:40:55.124 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.157 seconds (JVM running for 4.942)
-25-09-09.21:40:55.468 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:40:55.725 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:40:55.793 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:40:55.801 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:40:55.822 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:40:55.827 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:42:08.228 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 24900 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:42:08.230 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.21:42:09.039 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:42:09.043 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:42:09.075 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
-25-09-09.21:42:09.793 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:42:10.143 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:42:10.155 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:42:11.905 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:42:11.957 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.22 seconds (JVM running for 4.994)
-25-09-09.21:42:12.294 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:42:12.538 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:42:12.607 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:42:12.613 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:42:12.616 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始userId:user003,strategyId:100001,rulemodel:rule_blacklist
-25-09-09.21:42:12.633 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管userId:user003,strategyId:100001,rulemodel:rule_blacklist
-25-09-09.21:42:12.634 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 user003 100001 100 rule_blacklist
-25-09-09.21:42:12.790 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100001,"userId":"user003"}
-25-09-09.21:42:12.793 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":100}
-25-09-09.21:42:12.848 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:42:12.854 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:42:12.902 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:42:12.906 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:42:12.909 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
-25-09-09.21:42:12.909 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
-25-09-09.21:42:12.909 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
-25-09-09.21:42:12.918 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:42:12.933 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:47:56.577 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 30752 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:47:56.578 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.21:47:57.280 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:47:57.284 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:47:57.326 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-25-09-09.21:47:58.086 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:47:58.462 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:47:58.476 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:48:00.344 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:48:00.393 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.218 seconds (JVM running for 4.973)
-25-09-09.21:48:00.731 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:48:01.012 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:48:01.080 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:48:01.087 [main            ] INFO  RaffleStrategyTest     - 测试结果
-25-09-09.21:48:01.109 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:48:01.113 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:54:01.478 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 1960 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:54:01.479 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.21:54:02.160 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:54:02.164 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:54:02.192 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-25-09-09.21:54:02.984 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:54:03.348 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:54:03.365 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:54:05.155 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:54:05.207 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.133 seconds (JVM running for 4.889)
-25-09-09.21:54:05.534 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:54:05.802 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:54:05.869 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:54:05.876 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:54:05.880 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始userId:user003,strategyId:100001,rulemodel:rule_blacklist
-25-09-09.21:54:05.897 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管userId:user003,strategyId:100001,rulemodel:rule_blacklist
-25-09-09.21:54:05.898 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 user003 100001 100 rule_blacklist
-25-09-09.21:54:06.055 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100001,"userId":"user003"}
-25-09-09.21:54:06.058 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":100}
-25-09-09.21:54:06.120 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:54:06.127 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:54:06.179 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:54:06.183 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:54:06.186 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
-25-09-09.21:54:06.186 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
-25-09-09.21:54:06.186 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
-25-09-09.21:54:06.196 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:54:06.212 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:54:33.530 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 24384 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:54:33.531 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.21:54:34.194 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:54:34.197 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:54:34.225 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-25-09-09.21:54:34.929 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:54:35.271 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:54:35.284 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:54:37.009 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:54:37.063 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.992 seconds (JVM running for 4.801)
-25-09-09.21:54:37.407 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:54:37.715 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:54:37.798 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:54:37.805 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:54:37.832 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:54:37.855 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:55:07.503 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 12680 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:55:07.504 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.21:55:08.177 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:55:08.181 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:55:08.207 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
-25-09-09.21:55:08.986 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:55:09.347 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:55:09.361 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:55:11.134 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:55:11.180 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.091 seconds (JVM running for 4.851)
-25-09-09.21:55:11.538 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:55:11.791 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:55:11.862 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:55:11.869 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:55:11.877 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
-25-09-09.21:55:12.031 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
-25-09-09.21:55:12.035 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
-25-09-09.21:55:12.048 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:55:12.066 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:55:35.257 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 28608 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:55:35.258 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.21:55:36.023 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:55:36.028 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:55:36.061 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
-25-09-09.21:55:36.750 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:55:37.092 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:55:37.104 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:55:38.866 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:55:38.918 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.084 seconds (JVM running for 4.827)
-25-09-09.21:55:39.263 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:55:39.536 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:55:39.605 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:55:39.612 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:55:39.617 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始userId:user003,strategyId:100001,rulemodel:rule_blacklist
-25-09-09.21:55:39.637 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单接管userId:user003,strategyId:100001,rulemodel:rule_blacklist
-25-09-09.21:55:39.638 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 user003 100001 100 rule_blacklist
-25-09-09.21:55:39.824 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100001,"userId":"user003"}
-25-09-09.21:55:39.827 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":100}
-25-09-09.21:55:39.842 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:55:39.859 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.21:55:48.133 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 25728 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.21:55:48.134 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.21:55:48.834 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.21:55:48.837 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.21:55:48.864 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-25-09-09.21:55:49.588 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.21:55:49.940 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:55:49.953 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.21:55:51.675 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.21:55:51.724 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.991 seconds (JVM running for 4.789)
-25-09-09.21:55:52.031 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.21:55:52.302 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.21:55:52.370 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:55:52.376 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.21:55:52.401 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.21:55:52.406 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.22:00:51.912 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 12164 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.22:00:51.913 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.22:00:52.643 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.22:00:52.648 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.22:00:52.678 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-25-09-09.22:00:53.397 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.22:00:53.735 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.22:00:53.747 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.22:00:55.521 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.22:00:55.578 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.071 seconds (JVM running for 4.82)
-25-09-09.22:00:55.905 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.22:00:56.183 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.22:00:56.253 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.22:00:56.259 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.22:00:56.275 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.22:00:56.295 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.22:00:56.318 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.22:01:25.591 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 12612 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.22:01:25.592 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.22:01:26.279 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.22:01:26.282 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.22:01:26.309 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-25-09-09.22:01:27.005 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.22:01:27.360 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.22:01:27.371 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.22:01:29.039 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.22:01:29.087 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.908 seconds (JVM running for 4.692)
-25-09-09.22:01:29.413 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.22:01:29.657 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.22:01:29.728 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.22:01:29.735 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.22:01:29.749 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.22:01:29.753 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始userId:xiaofuge,strategyId:100003,rulemodel:rule_blacklist
-25-09-09.22:01:29.788 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.22:01:29.810 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-25-09-09.22:02:09.448 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 29856 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
-25-09-09.22:02:09.449 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
-25-09-09.22:02:10.119 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-25-09-09.22:02:10.122 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-25-09-09.22:02:10.147 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-25-09-09.22:02:10.858 [main            ] INFO  Version                - Redisson 3.23.4
-25-09-09.22:02:11.198 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.22:02:11.209 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
-25-09-09.22:02:12.927 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-25-09-09.22:02:12.979 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 3.963 seconds (JVM running for 4.773)
-25-09-09.22:02:13.299 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-25-09-09.22:02:13.564 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-25-09-09.22:02:13.689 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.22:02:13.695 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.22:02:13.704 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
-25-09-09.22:02:13.708 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单开始userId:xiaofuge,strategyId:100001,rulemodel:rule_blacklist
-25-09-09.22:02:13.728 [main            ] INFO  BlackListLogicChain    - 抽奖责任链-黑名单放行userId:xiaofuge,strategyId:100001,rulemodel:rule_blacklist
-25-09-09.22:02:13.728 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重策略开始userId:xiaofuge,strategyId:100001,rulemodel:rule_weight
-25-09-09.22:02:13.731 [main            ] INFO  RuleWeightLogicChain   - 抽奖责任链-权重策略接管userId:xiaofuge,strategyId:100001,rulemodel:rule_weight
-25-09-09.22:02:13.734 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100001 105 rule_weight
-25-09-09.22:02:13.887 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100001,"userId":"xiaofuge"}
-25-09-09.22:02:13.889 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":105}
-25-09-09.22:02:13.901 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-25-09-09.22:02:13.916 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-09-10.17:17:29.942 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 18428 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-10.17:17:29.944 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-09-10.17:17:30.730 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-10.17:17:30.733 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-10.17:17:30.762 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+25-09-10.17:17:31.556 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-10.17:17:31.970 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:17:31.985 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:17:32.391 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'updateAwardStockJob': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultRaffleStrategy' defined in file [D:\javacode\WebProj\big-market\big-market\big-market-domain\target\classes\cn\bugstack\domain\strategy\service\raffle\DefaultRaffleStrategy.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRespositoryImpl': Unsatisfied dependency expressed through field 'iStrategyRespository'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'strategyRespositoryImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+25-09-10.17:17:32.423 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+25-09-10.17:17:32.474 [main            ] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   updateAwardStockJob
+      ↓
+   defaultRaffleStrategy defined in file [D:\javacode\WebProj\big-market\big-market\big-market-domain\target\classes\cn\bugstack\domain\strategy\service\raffle\DefaultRaffleStrategy.class]
+┌─────┐
+|  strategyRespositoryImpl (field private cn.bugstack.domain.strategy.respository.IStrategyRespository cn.bugstack.infrastructure.persistent.repository.StrategyRespositoryImpl.iStrategyRespository)
+└─────┘
+
+
+Action:
+
+Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+25-09-10.17:17:32.485 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@4988d8b8] to prepare test instance [cn.bugstack.test.domain.RaffleStrategyTest@619c93ca]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:231)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'updateAwardStockJob': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultRaffleStrategy' defined in file [D:\javacode\WebProj\big-market\big-market\big-market-domain\target\classes\cn\bugstack\domain\strategy\service\raffle\DefaultRaffleStrategy.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRespositoryImpl': Unsatisfied dependency expressed through field 'iStrategyRespository'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'strategyRespositoryImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultRaffleStrategy' defined in file [D:\javacode\WebProj\big-market\big-market\big-market-domain\target\classes\cn\bugstack\domain\strategy\service\raffle\DefaultRaffleStrategy.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRespositoryImpl': Unsatisfied dependency expressed through field 'iStrategyRespository'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'strategyRespositoryImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:544)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 43 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRespositoryImpl': Unsatisfied dependency expressed through field 'iStrategyRespository'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'strategyRespositoryImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 61 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'strategyRespositoryImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.beforeSingletonCreation(DefaultSingletonBeanRegistry.java:355)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:227)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
+	... 76 common frames omitted
+25-09-10.17:19:35.710 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 17052 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-10.17:19:35.711 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-09-10.17:19:36.532 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-10.17:19:36.535 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-10.17:19:36.568 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+25-09-10.17:19:37.383 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-10.17:19:37.766 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:19:37.781 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:19:39.750 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-10.17:19:39.810 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.548 seconds (JVM running for 5.509)
+25-09-10.17:19:40.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:19:40.008 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-09-10.17:19:40.022 [scheduling-1    ] ERROR UpdateAwardStockJob    - 定时任务异常
+java.lang.NullPointerException: null
+	at cn.bugstack.trigger.job.UpdateAwardStockJob.updateAwardStock(UpdateAwardStockJob.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-10.17:19:40.359 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-09-10.17:19:40.504 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+25-09-10.17:19:40.526 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-09-10.17:19:40.538 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-09-10.17:20:26.130 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 12132 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-10.17:20:26.131 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-09-10.17:20:26.960 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-10.17:20:26.963 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-10.17:20:26.993 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+25-09-10.17:20:27.815 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-10.17:20:28.211 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:20:28.225 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:20:30.243 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-10.17:20:30.298 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.652 seconds (JVM running for 5.5)
+25-09-10.17:20:30.546 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+25-09-10.17:20:30.556 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:20:30.731 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:20:30.733 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:20:30.738 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:20:30.739 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:20:30.739 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:20:30.742 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:20:30.742 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:20:30.743 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:20:30.747 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:20:30.747 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:20:30.747 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:20:35.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:20:35.022 [scheduling-1    ] ERROR UpdateAwardStockJob    - 定时任务异常
+java.lang.NullPointerException: null
+	at cn.bugstack.trigger.job.UpdateAwardStockJob.updateAwardStock(UpdateAwardStockJob.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-10.17:20:40.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:20:40.011 [scheduling-1    ] ERROR UpdateAwardStockJob    - 定时任务异常
+java.lang.NullPointerException: null
+	at cn.bugstack.trigger.job.UpdateAwardStockJob.updateAwardStock(UpdateAwardStockJob.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-10.17:20:45.015 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:20:45.017 [scheduling-1    ] ERROR UpdateAwardStockJob    - 定时任务异常
+java.lang.NullPointerException: null
+	at cn.bugstack.trigger.job.UpdateAwardStockJob.updateAwardStock(UpdateAwardStockJob.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-10.17:26:32.843 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 16580 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-10.17:26:32.844 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-09-10.17:26:33.650 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-10.17:26:33.652 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-10.17:26:33.678 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+25-09-10.17:26:34.493 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-10.17:26:34.869 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:26:34.884 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:26:36.749 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-10.17:26:36.802 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.428 seconds (JVM running for 5.302)
+25-09-10.17:26:37.080 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+25-09-10.17:26:37.093 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:26:37.245 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:26:37.248 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:26:37.254 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:26:37.254 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:26:37.254 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:26:37.258 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:26:37.259 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:26:37.259 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:26:37.264 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:26:37.264 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:26:37.264 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:26:40.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:26:40.018 [scheduling-1    ] ERROR UpdateAwardStockJob    - 定时任务异常
+java.lang.NullPointerException: null
+	at cn.bugstack.trigger.job.UpdateAwardStockJob.updateAwardStock(UpdateAwardStockJob.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-10.17:26:45.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:26:45.012 [scheduling-1    ] ERROR UpdateAwardStockJob    - 定时任务异常
+java.lang.NullPointerException: null
+	at cn.bugstack.trigger.job.UpdateAwardStockJob.updateAwardStock(UpdateAwardStockJob.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-10.17:27:14.039 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 18216 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-10.17:27:14.041 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-09-10.17:27:14.900 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-10.17:27:14.903 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-10.17:27:14.936 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+25-09-10.17:27:15.731 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-10.17:27:16.109 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:27:16.122 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:27:18.059 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-10.17:27:18.131 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.544 seconds (JVM running for 5.453)
+25-09-10.17:27:18.344 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-09-10.17:27:18.599 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-09-10.17:27:18.715 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+25-09-10.17:27:18.731 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:27:18.930 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:27:18.932 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:27:18.936 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:27:18.936 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:27:18.938 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:27:18.942 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:27:18.942 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:27:18.942 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:27:18.945 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:27:18.945 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:27:18.945 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:27:20.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:27:20.008 [scheduling-1    ] ERROR UpdateAwardStockJob    - 定时任务异常
+java.lang.NullPointerException: null
+	at cn.bugstack.trigger.job.UpdateAwardStockJob.updateAwardStock(UpdateAwardStockJob.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-10.17:27:25.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:27:25.016 [scheduling-1    ] ERROR UpdateAwardStockJob    - 定时任务异常
+java.lang.NullPointerException: null
+	at cn.bugstack.trigger.job.UpdateAwardStockJob.updateAwardStock(UpdateAwardStockJob.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-10.17:27:29.128 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-09-10.17:27:29.150 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-09-10.17:30:16.238 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 20268 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-10.17:30:16.240 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-09-10.17:30:17.104 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-10.17:30:17.106 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-10.17:30:17.136 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+25-09-10.17:30:17.948 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-10.17:30:18.347 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:30:18.361 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:30:20.353 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-10.17:30:20.412 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.653 seconds (JVM running for 5.619)
+25-09-10.17:30:20.612 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-09-10.17:30:20.881 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-09-10.17:30:21.008 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+25-09-10.17:30:21.021 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:30:21.212 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:30:21.214 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:30:21.218 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:30:21.218 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:30:21.218 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:30:21.221 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:30:21.222 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:30:21.222 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:30:21.226 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:30:21.226 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:30:21.226 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:30:25.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:30:25.016 [scheduling-1    ] ERROR TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task
+java.lang.NullPointerException: null
+	at cn.bugstack.trigger.job.UpdateAwardStockJob.updateAwardStock(UpdateAwardStockJob.java:24)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-10.17:30:30.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:30:30.006 [scheduling-1    ] ERROR TaskUtils$LoggingErrorHandler - Unexpected error occurred in scheduled task
+java.lang.NullPointerException: null
+	at cn.bugstack.trigger.job.UpdateAwardStockJob.updateAwardStock(UpdateAwardStockJob.java:24)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+25-09-10.17:30:31.064 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-09-10.17:30:31.079 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-09-10.17:33:43.419 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 7656 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-10.17:33:43.420 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-09-10.17:33:44.256 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-10.17:33:44.261 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-10.17:33:44.299 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+25-09-10.17:33:45.145 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-10.17:33:45.532 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:33:45.545 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.17:33:47.462 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-10.17:33:47.517 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.524 seconds (JVM running for 5.386)
+25-09-10.17:33:47.743 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-09-10.17:33:48.034 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-09-10.17:33:48.137 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+25-09-10.17:33:48.149 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:33:48.311 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:33:48.313 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:33:48.318 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:33:48.318 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:33:48.319 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:33:48.323 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:33:48.323 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:33:48.323 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:33:48.327 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.17:33:48.327 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.17:33:48.327 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.17:33:50.003 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:33:50.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 当前无任务
+25-09-10.17:33:55.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:33:55.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 当前无任务
+25-09-10.17:34:00.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.17:34:00.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 当前无任务
+25-09-10.17:34:01.608 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-09-10.17:34:01.624 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-09-10.20:09:46.605 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 15836 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-10.20:09:46.606 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-09-10.20:09:47.429 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-10.20:09:47.433 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-10.20:09:47.472 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+25-09-10.20:09:48.285 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-10.20:09:48.657 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.20:09:48.670 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.20:09:50.509 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-10.20:09:50.577 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.422 seconds (JVM running for 5.231)
+25-09-10.20:09:50.805 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-09-10.20:09:51.066 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-09-10.20:09:51.176 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+25-09-10.20:09:51.190 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.20:09:51.347 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:09:51.349 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.20:09:51.354 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.20:09:51.354 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:09:51.354 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.20:09:51.359 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.20:09:51.359 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:09:51.359 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.20:09:51.362 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.20:09:51.363 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:09:51.363 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardId":102}
+25-09-10.20:09:55.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:09:55.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 当前无事务
+25-09-10.20:10:00.000 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:10:00.002 [scheduling-1    ] INFO  UpdateAwardStockJob    - 当前无事务
+25-09-10.20:10:02.794 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-09-10.20:10:02.807 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-09-10.20:34:05.060 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 17248 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-10.20:34:05.061 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-09-10.20:34:05.860 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-10.20:34:05.862 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-10.20:34:05.890 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+25-09-10.20:34:06.660 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-10.20:34:07.037 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.20:34:07.051 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.20:34:08.920 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-10.20:34:08.979 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.41 seconds (JVM running for 5.341)
+25-09-10.20:34:09.188 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-09-10.20:34:09.471 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-09-10.20:34:09.582 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+25-09-10.20:34:09.595 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.20:34:09.638 [main            ] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:xiaofuge strategyId:100006 awardId:102
+25-09-10.20:34:09.639 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_lock code:0000
+25-09-10.20:34:09.639 [main            ] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:34:09.697 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_stock code:0001
+25-09-10.20:34:09.698 [main            ] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-保底奖励userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:34:09.722 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-09-10.20:34:09.736 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-09-10.20:36:20.812 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 21492 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-10.20:36:20.814 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-09-10.20:36:21.594 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-10.20:36:21.598 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-10.20:36:21.625 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+25-09-10.20:36:22.451 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-10.20:36:22.829 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.20:36:22.841 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.20:36:24.758 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-10.20:36:24.817 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.483 seconds (JVM running for 5.4)
+25-09-10.20:36:25.000 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:36:25.019 [scheduling-1    ] INFO  UpdateAwardStockJob    - 当前无事务
+25-09-10.20:36:25.064 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-09-10.20:36:25.324 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-09-10.20:36:25.433 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+25-09-10.20:36:25.445 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.20:36:25.464 [main            ] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:xiaofuge strategyId:100006 awardId:102
+25-09-10.20:36:25.464 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_lock code:0000
+25-09-10.20:36:25.465 [main            ] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:36:25.489 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_stock code:0001
+25-09-10.20:36:25.489 [main            ] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-保底奖励userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:36:25.489 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_luck_award code:0001
+25-09-10.20:36:25.489 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 xiaofuge 100006 101 1,100
+25-09-10.20:36:25.652 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:36:25.654 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardDesc":"1,100","awardId":101}
+25-09-10.20:36:25.658 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 101 default
+25-09-10.20:36:25.662 [main            ] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:xiaofuge strategyId:100006 awardId:101
+25-09-10.20:36:25.662 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_lock code:0000
+25-09-10.20:36:25.662 [main            ] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减userId:xiaofuge,strategyId:100006,awardId:101
+25-09-10.20:36:25.665 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_stock code:0001
+25-09-10.20:36:25.665 [main            ] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-保底奖励userId:xiaofuge,strategyId:100006,awardId:101
+25-09-10.20:36:25.665 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_luck_award code:0001
+25-09-10.20:36:25.665 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 xiaofuge 100006 101 1,100
+25-09-10.20:36:25.665 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:36:25.666 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardDesc":"1,100","awardId":101}
+25-09-10.20:36:25.670 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.20:36:25.673 [main            ] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:xiaofuge strategyId:100006 awardId:102
+25-09-10.20:36:25.673 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_lock code:0000
+25-09-10.20:36:25.673 [main            ] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:36:25.676 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_stock code:0001
+25-09-10.20:36:25.677 [main            ] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-保底奖励userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:36:25.677 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_luck_award code:0001
+25-09-10.20:36:25.677 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 xiaofuge 100006 101 1,100
+25-09-10.20:36:25.677 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:36:25.677 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardDesc":"1,100","awardId":101}
+25-09-10.20:36:25.680 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 101 default
+25-09-10.20:36:25.683 [main            ] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:xiaofuge strategyId:100006 awardId:101
+25-09-10.20:36:25.683 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_lock code:0000
+25-09-10.20:36:25.683 [main            ] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减userId:xiaofuge,strategyId:100006,awardId:101
+25-09-10.20:36:25.686 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_stock code:0001
+25-09-10.20:36:25.686 [main            ] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-保底奖励userId:xiaofuge,strategyId:100006,awardId:101
+25-09-10.20:36:25.686 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_luck_award code:0001
+25-09-10.20:36:25.686 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 xiaofuge 100006 101 1,100
+25-09-10.20:36:25.686 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:36:25.686 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardDesc":"1,100","awardId":101}
+25-09-10.20:36:30.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:36:30.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新策略 strategyId100006,awardId:102
+25-09-10.20:36:30.132 [scheduling-1    ] ERROR UpdateAwardStockJob    - 
+### Error updating database.  Cause: java.sql.SQLException: Unknown system variable 'award_count_surplus'
+### The error may exist in file [D:\javacode\WebProj\big-market\big-market\big-market-app\target\classes\mybatis\mapper\strategy_award_mapper.xml]
+### The error may involve cn.bugstack.infrastructure.persistent.dao.IStrategyAwardDao.updateStrategyAwardStock-Inline
+### The error occurred while setting parameters
+### SQL: set award_count_surplus=award_count_surplus-1             from strategy_award             where strategy_id=? and award_id=?
+### Cause: java.sql.SQLException: Unknown system variable 'award_count_surplus'
+; uncategorized SQLException; SQL state [HY000]; error code [1193]; Unknown system variable 'award_count_surplus'; nested exception is java.sql.SQLException: Unknown system variable 'award_count_surplus'
+25-09-10.20:36:35.005 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:36:35.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新策略 strategyId100006,awardId:101
+25-09-10.20:36:35.010 [scheduling-1    ] ERROR UpdateAwardStockJob    - 
+### Error updating database.  Cause: java.sql.SQLException: Unknown system variable 'award_count_surplus'
+### The error may exist in file [D:\javacode\WebProj\big-market\big-market\big-market-app\target\classes\mybatis\mapper\strategy_award_mapper.xml]
+### The error may involve cn.bugstack.infrastructure.persistent.dao.IStrategyAwardDao.updateStrategyAwardStock-Inline
+### The error occurred while setting parameters
+### SQL: set award_count_surplus=award_count_surplus-1             from strategy_award             where strategy_id=? and award_id=?
+### Cause: java.sql.SQLException: Unknown system variable 'award_count_surplus'
+; uncategorized SQLException; SQL state [HY000]; error code [1193]; Unknown system variable 'award_count_surplus'; nested exception is java.sql.SQLException: Unknown system variable 'award_count_surplus'
+25-09-10.20:36:40.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:36:40.016 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新策略 strategyId100006,awardId:102
+25-09-10.20:36:40.019 [scheduling-1    ] ERROR UpdateAwardStockJob    - 
+### Error updating database.  Cause: java.sql.SQLException: Unknown system variable 'award_count_surplus'
+### The error may exist in file [D:\javacode\WebProj\big-market\big-market\big-market-app\target\classes\mybatis\mapper\strategy_award_mapper.xml]
+### The error may involve cn.bugstack.infrastructure.persistent.dao.IStrategyAwardDao.updateStrategyAwardStock-Inline
+### The error occurred while setting parameters
+### SQL: set award_count_surplus=award_count_surplus-1             from strategy_award             where strategy_id=? and award_id=?
+### Cause: java.sql.SQLException: Unknown system variable 'award_count_surplus'
+; uncategorized SQLException; SQL state [HY000]; error code [1193]; Unknown system variable 'award_count_surplus'; nested exception is java.sql.SQLException: Unknown system variable 'award_count_surplus'
+25-09-10.20:36:43.683 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-09-10.20:36:43.696 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-09-10.20:39:05.818 [main            ] INFO  RaffleStrategyTest     - Starting RaffleStrategyTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 21132 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-10.20:39:05.820 [main            ] INFO  RaffleStrategyTest     - The following 1 profile is active: "dev"
+25-09-10.20:39:06.603 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-10.20:39:06.606 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-10.20:39:06.640 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+25-09-10.20:39:07.423 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-10.20:39:07.821 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.20:39:07.834 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-10.20:39:09.738 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-10.20:39:09.789 [main            ] INFO  RaffleStrategyTest     - Started RaffleStrategyTest in 4.428 seconds (JVM running for 5.326)
+25-09-10.20:39:09.999 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-09-10.20:39:10.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:39:10.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 当前无事务
+25-09-10.20:39:10.281 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-09-10.20:39:10.389 [main            ] INFO  RaffleStrategyTest     - 测试结果：true
+25-09-10.20:39:10.401 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.20:39:10.420 [main            ] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:xiaofuge strategyId:100006 awardId:102
+25-09-10.20:39:10.421 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_lock code:0000
+25-09-10.20:39:10.422 [main            ] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:39:10.445 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_stock code:0001
+25-09-10.20:39:10.446 [main            ] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-保底奖励userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:39:10.446 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_luck_award code:0001
+25-09-10.20:39:10.446 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 xiaofuge 100006 101 1,100
+25-09-10.20:39:10.611 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:39:10.613 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardDesc":"1,100","awardId":101}
+25-09-10.20:39:10.617 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.20:39:10.622 [main            ] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:xiaofuge strategyId:100006 awardId:102
+25-09-10.20:39:10.622 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_lock code:0000
+25-09-10.20:39:10.622 [main            ] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:39:10.627 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_stock code:0001
+25-09-10.20:39:10.628 [main            ] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-保底奖励userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:39:10.628 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_luck_award code:0001
+25-09-10.20:39:10.628 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 xiaofuge 100006 101 1,100
+25-09-10.20:39:10.628 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:39:10.628 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardDesc":"1,100","awardId":101}
+25-09-10.20:39:10.632 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.20:39:10.634 [main            ] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:xiaofuge strategyId:100006 awardId:102
+25-09-10.20:39:10.634 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_lock code:0000
+25-09-10.20:39:10.634 [main            ] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:39:10.638 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_stock code:0001
+25-09-10.20:39:10.638 [main            ] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-保底奖励userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:39:10.638 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_luck_award code:0001
+25-09-10.20:39:10.638 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 xiaofuge 100006 101 1,100
+25-09-10.20:39:10.638 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:39:10.638 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardDesc":"1,100","awardId":101}
+25-09-10.20:39:10.641 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-责任链 xiaofuge 100006 102 default
+25-09-10.20:39:10.644 [main            ] INFO  RuleLockLogicTreeNode  - 规则过滤-次数锁 userId:xiaofuge strategyId:100006 awardId:102
+25-09-10.20:39:10.644 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_lock code:0000
+25-09-10.20:39:10.644 [main            ] INFO  RuleStockLogicTreeNode - 规则过滤-库存扣减userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:39:10.647 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_stock code:0001
+25-09-10.20:39:10.647 [main            ] INFO  RuleLuckAwardLogicTreeNode - 规则过滤-保底奖励userId:xiaofuge,strategyId:100006,awardId:102
+25-09-10.20:39:10.647 [main            ] INFO  DecisionTreeEngine     - 决策树引擎【规则树】treeId:tree_lock node:rule_luck_award code:0001
+25-09-10.20:39:10.647 [main            ] INFO  AbstractRaffleStrategy - 抽奖策略计算-规则树 xiaofuge 100006 101 1,100
+25-09-10.20:39:10.648 [main            ] INFO  RaffleStrategyTest     - 请求参数：{"strategyId":100006,"userId":"xiaofuge"}
+25-09-10.20:39:10.648 [main            ] INFO  RaffleStrategyTest     - 测试结果：{"awardDesc":"1,100","awardId":101}
+25-09-10.20:39:15.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:39:15.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新策略 strategyId100006,awardId:102
+25-09-10.20:39:20.006 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:39:20.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新策略 strategyId100006,awardId:102
+25-09-10.20:39:25.008 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:39:25.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新策略 strategyId100006,awardId:102
+25-09-10.20:39:30.012 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:39:30.014 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新策略 strategyId100006,awardId:102
+25-09-10.20:39:35.007 [scheduling-1    ] INFO  UpdateAwardStockJob    - 定时任务，更新奖品消耗库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-10.20:39:35.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 当前无事务
+25-09-10.20:39:38.130 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-09-10.20:39:38.145 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

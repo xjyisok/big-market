@@ -38,7 +38,7 @@ public class DefaultLogicChainFactory {
     @Getter
     @AllArgsConstructor
     public enum LogicModel{
-        RULE_DEFAULT("rule_default","默认抽奖"),
+        RULE_DEFAULT("default","默认抽奖"),
         RULE_WEIGHT("rule_weight","权重规则"),
         RULE_BLACKLIST("rule_blacklist","黑名单抽奖");
         private final String ruleModel;

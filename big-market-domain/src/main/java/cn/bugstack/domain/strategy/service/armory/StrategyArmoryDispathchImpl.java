@@ -4,6 +4,7 @@ import cn.bugstack.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.bugstack.domain.strategy.model.entity.StrategyEntity;
 import cn.bugstack.domain.strategy.model.entity.StrategyRuleEntity;
 import cn.bugstack.domain.strategy.respository.IStrategyRespository;
+import cn.bugstack.types.common.Constants;
 import cn.bugstack.types.enums.ResponseCode;
 import cn.bugstack.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
@@ -24,13 +25,16 @@ import java.util.*;
 public class StrategyArmoryDispathchImpl implements IStrategyArmory, IStrategyDisPatch {
     @Autowired
     private IStrategyRespository strategyRespository;
-    @Autowired
-    private IStrategyRespository iStrategyRespository;
-
     @Override
     public boolean assembleLotteryStrategy(Long strategyId) {
         //1.查询策略配置
         List<StrategyAwardEntity>strategyAwardEntityList=strategyRespository.queryStrategyAwardList(strategyId);
+        for(StrategyAwardEntity strategyAwardEntity:strategyAwardEntityList){
+            Integer awardId=strategyAwardEntity.getAwardId();
+            Integer awardcount=strategyAwardEntity.getAwardCount();
+            cacheStrategyAwardCount(strategyId,awardcount,awardId);
+
+        }
         assembleLotteryStrategy(String.valueOf(strategyId), strategyAwardEntityList);
         //2.权重策略配置-适用于rule-weight权重规则配置
         StrategyEntity strategyEntity=strategyRespository.queryStrategyEntityByStrategyId(strategyId);
@@ -84,5 +88,14 @@ public class StrategyArmoryDispathchImpl implements IStrategyArmory, IStrategyDi
         // 通过生成的随机值，获取概率值奖品查找表的结果
         return strategyRespository.getStrategyAwardAssemble(key, new SecureRandom().nextInt(rateRange));
     }
+    private void cacheStrategyAwardCount(Long strategyId,Integer awardCount,Integer awardId){
+        String cachekey= Constants.RedisKey.STRATEGY_AWARD_COUNT_KEY+strategyId+Constants.UNDERLINE+awardId;
+        strategyRespository.cacheStrategyAwardCount(cachekey,awardCount);
+    }
 
+    @Override
+    public Boolean substractAwardCount(Long strategyId, Integer awardId) {
+        String key=Constants.RedisKey.STRATEGY_AWARD_COUNT_KEY+strategyId+Constants.UNDERLINE+awardId;
+        return strategyRespository.substractAwardCount(key);
+    }
 }

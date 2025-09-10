@@ -5,6 +5,7 @@ import cn.bugstack.domain.strategy.model.entity.StrategyEntity;
 import cn.bugstack.domain.strategy.model.entity.StrategyRuleEntity;
 import cn.bugstack.domain.strategy.model.vo.RuleTreeVO;
 import cn.bugstack.domain.strategy.model.vo.StrategyAwardRuleModelVO;
+import cn.bugstack.domain.strategy.model.vo.StrategyAwardStockModelVO;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -24,4 +25,13 @@ public interface IStrategyRespository {
     StrategyAwardRuleModelVO queryStrategyAwardRuleModels(Long strategyId, Integer awardId);
 
     RuleTreeVO queryRuleTreeVOByTreeId(String treeId);
+    public void cacheStrategyAwardCount(String cachekey, Integer awardcount);
+
+    Boolean substractAwardCount(String key);
+
+    void awardStockConsumeSendQueue(StrategyAwardStockModelVO strategyAwardStockModelVO);
+
+    StrategyAwardStockModelVO takeQueueValue();
+
+    void updateStrategyAwardStock(Long strategyId, Integer awardId);
 }

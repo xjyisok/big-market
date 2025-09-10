@@ -5,6 +5,7 @@ import cn.bugstack.domain.strategy.model.entity.RaffleFactoryEntity;
 import cn.bugstack.domain.strategy.model.entity.RuleActionEntity;
 import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import cn.bugstack.domain.strategy.model.vo.StrategyAwardRuleModelVO;
+import cn.bugstack.domain.strategy.model.vo.StrategyAwardStockModelVO;
 import cn.bugstack.domain.strategy.respository.IStrategyRespository;
 import cn.bugstack.domain.strategy.service.armory.IStrategyDisPatch;
 import cn.bugstack.domain.strategy.service.rule.chain.factory.DefaultLogicChainFactory;
@@ -18,7 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 import javax.annotation.Resource;
 
 @Slf4j
-public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
+public abstract class AbstractRaffleStrategy implements IRaffleStrategy,IRaffleStock{
     protected IStrategyRespository respository;
     protected IStrategyDisPatch strategyDispatch;
     protected final DefaultLogicChainFactory defaultLogicChainFactory;
@@ -41,6 +42,7 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
         DefaultLogicChainFactory.StrategyAwardVO chainStrategyAward=raffleLogicChain(userId,strategyId);
         log.info("抽奖策略计算-责任链 {} {} {} {}", userId, strategyId, chainStrategyAward.getAwardId(), chainStrategyAward.getLogicModel());
         if (!DefaultLogicChainFactory.LogicModel.RULE_DEFAULT.getRuleModel().equals(chainStrategyAward.getLogicModel())) {
+            System.out.println("被默认拦截了");
             return RaffleAwardEntity.builder()
                     .awardId(chainStrategyAward.getAwardId())
                     .build();
@@ -104,4 +106,13 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy {
      */
     public abstract DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Long strategyId, Integer awardId);
 
+    @Override
+    public StrategyAwardStockModelVO takeQueueValue() throws InterruptedException {
+        return null;
+    }
+
+    @Override
+    public void updateStrategyAwardStock(Long strategyId, Integer awardId) {
+
+    }
 }
