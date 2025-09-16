@@ -1,17 +1,146 @@
-25-09-14.21:22:50.680 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4009e306] to prepare test instance [cn.bugstack.test.domain.activity.RaffleOrderTest@10a0a1e]
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cn.bugstack.test.domain.activity.RaffleOrderTest': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.bugstack.domain.activity.service.IRaffleOrder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:417)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:119)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
-	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:43)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+25-09-16.22:45:39.091 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'updateActivitySkuStockJob': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'raffleActivityService' defined in file [D:\javacode\WebProj\big-market\big-market\big-market-domain\target\classes\cn\bugstack\domain\activity\service\RaffleActivityService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'defaultActivityChainFactory' defined in file [D:\javacode\WebProj\big-market\big-market\big-market-domain\target\classes\cn\bugstack\domain\activity\service\rule\factory\DefaultActivityChainFactory.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'activity_sku_stock_action': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.bugstack.domain.activity.service.armory.IActivityArmory' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+25-09-16.22:46:03.891 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.897 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.901 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.906 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.911 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.916 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.922 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.928 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.934 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.940 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.947 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.952 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.960 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.967 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.974 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.981 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.986 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.991 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:03.997 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:46:04.002 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.539 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.544 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.550 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.555 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.561 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.566 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.572 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.578 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.582 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.586 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.591 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.596 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.600 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.605 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.610 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.615 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.621 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.627 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.633 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.22:54:56.641 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.309 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.316 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.321 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.327 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.334 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.339 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.343 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.348 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.354 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.360 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.365 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.371 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.377 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.382 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.388 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.393 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.399 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.403 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.408 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:00:05.415 [main            ] WARN  RaffleOrderTest        - 活动未开启（非open状态）
+25-09-16.23:04:38.441 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.447 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.452 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.457 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.462 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.466 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.471 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.476 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.481 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.486 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.492 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.497 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.504 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.508 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.513 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.519 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.524 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.528 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.532 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:04:38.536 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:13:52.522 [main            ] ERROR ActivityRespositoryImpl - 写入订单记录，唯一索引冲突 userId: xiaofuge activityId: 100301 sku: 9011
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '700091009111' for key 'raffle_activity_order_001.uq_out_business_no'
+### The error may exist in file [D:\javacode\WebProj\big-market\big-market\big-market-app\target\classes\mybatis\mapper\raffle_activity_order_mapper.xml]
+### The error may involve cn.bugstack.infrastructure.persistent.dao.IRaffleActivityOrderDao.insert-Inline
+### The error occurred while setting parameters
+### SQL: insert into raffle_activity_order_001(user_id,sku,out_business_no,activity_id, activity_name, strategy_id, order_id, order_time,                                           total_count, day_count, month_count,state, create_time, update_time)         values(?, ?,?,?, ?, ?, ?,                ?,?, ?, ?,?, now(), now())
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '700091009111' for key 'raffle_activity_order_001.uq_out_business_no'
+; Duplicate entry '700091009111' for key 'raffle_activity_order_001.uq_out_business_no'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '700091009111' for key 'raffle_activity_order_001.uq_out_business_no'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:91)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:441)
+	at com.sun.proxy.$Proxy112.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:62)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+	at com.sun.proxy.$Proxy124.insert(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220)
+	at com.sun.proxy.$Proxy125.insert(Unknown Source)
+	at cn.bugstack.infrastructure.persistent.repository.ActivityRespositoryImpl.lambda$doSaveOrder$0(ActivityRespositoryImpl.java:149)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at cn.bugstack.infrastructure.persistent.repository.ActivityRespositoryImpl.doSaveOrder(ActivityRespositoryImpl.java:146)
+	at cn.bugstack.infrastructure.persistent.repository.ActivityRespositoryImpl$$FastClassBySpringCGLIB$$af0bf327.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at cn.bugstack.infrastructure.persistent.repository.ActivityRespositoryImpl$$EnhancerBySpringCGLIB$$b68f559c.doSaveOrder(<generated>)
+	at cn.bugstack.domain.activity.service.RaffleActivityService.doSaveOrder(RaffleActivityService.java:50)
+	at cn.bugstack.domain.activity.service.AbstractRaffleActivity.createSkuRechargeOrder(AbstractRaffleActivity.java:66)
+	at cn.bugstack.test.domain.activity.RaffleOrderTest.test_createSkuRechargeOrder_duplicate(RaffleOrderTest.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:74)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:84)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:251)
 	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
@@ -30,107 +159,32 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:231)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.bugstack.domain.activity.service.IRaffleOrder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:544)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
-	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
-	... 29 common frames omitted
-25-09-14.21:25:54.339 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'raffleActivityService' defined in file [D:\javacode\WebProj\big-market\big-market\big-market-domain\target\classes\cn\bugstack\domain\activity\service\RaffleActivityService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'activityRespositoryImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.bugstack.infrastructure.persistent.dao.IRaffleActivitySkuDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
-25-09-14.21:25:54.423 [main            ] ERROR LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 0 of constructor in cn.bugstack.domain.activity.service.RaffleActivityService required a bean of type 'cn.bugstack.infrastructure.persistent.dao.IRaffleActivitySkuDao' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'cn.bugstack.infrastructure.persistent.dao.IRaffleActivitySkuDao' in your configuration.
-
-25-09-14.21:25:54.426 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@3c9754d8] to prepare test instance [cn.bugstack.test.domain.activity.RaffleOrderTest@54495935]
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:248)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
-	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:231)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'raffleActivityService' defined in file [D:\javacode\WebProj\big-market\big-market\big-market-domain\target\classes\cn\bugstack\domain\activity\service\RaffleActivityService.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'activityRespositoryImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.bugstack.infrastructure.persistent.dao.IRaffleActivitySkuDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
-	... 27 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'activityRespositoryImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.bugstack.infrastructure.persistent.dao.IRaffleActivitySkuDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
-	... 45 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'cn.bugstack.infrastructure.persistent.dao.IRaffleActivitySkuDao' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:544)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
-	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
-	... 57 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '700091009111' for key 'raffle_activity_order_001.uq_out_business_no'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:47)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy195.update(Unknown Source)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427)
+	... 67 common frames omitted
+25-09-16.23:15:07.632 [main            ] WARN  RaffleOrderTest        - 活动库存不足
+25-09-16.23:15:07.638 [main            ] WARN  RaffleOrderTest        - 活动库存不足
