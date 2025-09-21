@@ -1,7 +1,7 @@
 package cn.bugstack.test.domain.activity;
 
 import cn.bugstack.domain.activity.model.entity.SkuRechargeEntity;
-import cn.bugstack.domain.activity.service.IRaffleOrder;
+import cn.bugstack.domain.activity.service.IRaffleOrderAccountQuoat;
 import cn.bugstack.domain.activity.service.armory.IActivityArmory;
 import cn.bugstack.types.exception.AppException;
 import lombok.extern.slf4j.Slf4j;
@@ -23,10 +23,10 @@ import java.util.concurrent.CountDownLatch;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class RaffleOrderTest {
+public class RaffleActivityQuotaOrderTest {
 
     @Resource
-    private IRaffleOrder raffleOrder;
+    private IRaffleOrderAccountQuoat raffleOrder;
     @Resource
     private IActivityArmory activityArmory;
 

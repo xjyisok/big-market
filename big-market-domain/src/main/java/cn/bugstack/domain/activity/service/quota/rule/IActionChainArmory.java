@@ -1,4 +1,4 @@
-package cn.bugstack.domain.activity.service.rule;
+package cn.bugstack.domain.activity.service.quota.rule;
 
 /**
  * 抽奖动作责任链
