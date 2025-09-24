@@ -25,7 +25,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @Repository
@@ -247,6 +250,7 @@ public class ActivityRespositoryImpl implements IActivityRespository {
         userRaffleOrderEntity.setActivityName(userRaffleOrderres.getActivityName());
         userRaffleOrderEntity.setStrategyId(userRaffleOrderres.getStrategyId());
         userRaffleOrderEntity.setOrderState(UserRaffleOrderStateVO.valueOf(userRaffleOrderres.getOrderState()));
+        userRaffleOrderEntity.setOrderId(userRaffleOrderres.getOrderId());
         return userRaffleOrderEntity;
     }
 
@@ -406,5 +410,21 @@ public class ActivityRespositoryImpl implements IActivityRespository {
             }
             return 1;
         });
+    }
+
+    @Override
+    public List<ActivitySkuEntity> queryActivitySkuByActivityId(Long activityId) {
+        List<RaffleActivitySku> raffleActivitySkus = raffleActivitySkuDao.queryActivitySkuListByActivityId(activityId);
+        List<ActivitySkuEntity> activitySkuEntities = new ArrayList<>(raffleActivitySkus.size());
+        for (RaffleActivitySku raffleActivitySku:raffleActivitySkus){
+            ActivitySkuEntity activitySkuEntity = new ActivitySkuEntity();
+            activitySkuEntity.setSku(raffleActivitySku.getSku());
+            activitySkuEntity.setActivityCountId(raffleActivitySku.getActivityCountId());
+            activitySkuEntity.setStockCount(raffleActivitySku.getStockCount());
+            activitySkuEntity.setStockCountSurplus(raffleActivitySku.getStockCountSurplus());
+            activitySkuEntities.add(activitySkuEntity);
+        }
+        return activitySkuEntities;
+
     }
 }

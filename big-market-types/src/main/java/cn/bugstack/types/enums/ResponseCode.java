@@ -21,6 +21,7 @@ public enum ResponseCode {
     ACTIVITY_QUOTA_ERROR("ERR_BIZ_006", "账户总库存不足"),
     ACTIVITY_MONTH_QUOTA_ERROR("ERR_BIZ_007", "账户月库存不足"),
     ACTIVITY_DAY_QUOTA_ERROR("ERR_BIZ_008", "账户日库存不足"),
+    ACTIVITY_ORDER_ERROR("ERR_BIZ_009", "抽奖订单重复使用异常"),
     ;
 
     private String code;

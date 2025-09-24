@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 @Component
 public class ActivityArmory implements IActivityArmory, IActivityDispatch {
     @Resource
@@ -15,7 +17,7 @@ public class ActivityArmory implements IActivityArmory, IActivityDispatch {
     @Override
     public boolean assembleActivitySku(Long sku) {
         ActivitySkuEntity activitySkuEntity =activityRespository.queryActivitySku(sku);
-        cacheActivitySkuStockCount(sku,activitySkuEntity.getStockCount());
+        cacheActivitySkuStockCount(sku,activitySkuEntity.getStockCountSurplus());
         activityRespository.queryRaffleActivityByActivityId(activitySkuEntity.getActivityId());
         activityRespository.queryRaffleActivityCountByActivityCountId(activitySkuEntity.getActivityCountId());
         return false;
@@ -29,5 +31,16 @@ public class ActivityArmory implements IActivityArmory, IActivityDispatch {
     public boolean subtarctionActivitySkuStock(Long sku, Date endDateTime) {
         String key= Constants.RedisKey.ACTIVITY_SKU_STOCK_COUNT_KEY+sku;
         return activityRespository.subtractionSkuStockCount(sku,key,endDateTime);
+    }
+
+    @Override
+    public boolean assembleActivitySkuByActivityId(Long activityId) {
+        List<ActivitySkuEntity>activitySkuEntities=activityRespository.queryActivitySkuByActivityId(activityId);
+        for(ActivitySkuEntity activitySkuEntity:activitySkuEntities){
+            cacheActivitySkuStockCount(activitySkuEntity.getSku(),activitySkuEntity.getStockCountSurplus());
+            activityRespository.queryRaffleActivityCountByActivityCountId(activitySkuEntity.getActivityCountId());
+        }
+        activityRespository.queryRaffleActivityByActivityId(activityId);
+        return true;
     }
 }

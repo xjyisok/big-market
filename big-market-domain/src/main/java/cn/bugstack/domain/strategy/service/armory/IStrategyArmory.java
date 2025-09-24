@@ -5,4 +5,5 @@ package cn.bugstack.domain.strategy.service.armory;
 public interface IStrategyArmory {
     public boolean assembleLotteryStrategy(Long strategyId);
     //public Integer getRandomAwardId(Long strategyId);
+    public boolean assembleLotteryStrategyByActivityId(Long activityId);
 }

@@ -16,6 +16,5 @@ public interface IUserRaffleOrderDao {
     void insert(UserRaffleOrder build);
     @DBRouter
     UserRaffleOrder queryNoUsedRaffleOrder(UserRaffleOrder userRaffleOrderReq);
-
-
+    int updateUserRaffleOrderState(UserRaffleOrder userRaffleOrder);
 }

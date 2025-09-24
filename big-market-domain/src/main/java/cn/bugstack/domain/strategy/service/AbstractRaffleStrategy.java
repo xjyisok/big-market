@@ -103,6 +103,7 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy,IRaffleS
                 .awardId(AwardId)
                 .awardConfig(awardConfig)
                 .sort(strategyAwardEntity.getSort())
+                .awardTitle(strategyAwardEntity.getAwardTitle())
                 .build();
     }
     public abstract DefaultLogicChainFactory.StrategyAwardVO raffleLogicChain(String userId, Long strategyId);

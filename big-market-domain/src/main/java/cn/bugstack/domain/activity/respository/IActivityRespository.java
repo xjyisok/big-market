@@ -6,6 +6,7 @@ import cn.bugstack.domain.activity.model.entity.*;
 import cn.bugstack.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Fuzhengwei bugstack.cn @小傅哥
@@ -45,4 +46,6 @@ public interface IActivityRespository {
     ActivityAccountDayEntity queryActivityAccountDayByUserId(String userId, Long activityId, String month);
 
     void saveCreatePartakeOrderAggerate(CreatePartakeOrderAggregate createPartakeOrderAggregate);
+
+    List<ActivitySkuEntity> queryActivitySkuByActivityId(Long activityId);
 }
