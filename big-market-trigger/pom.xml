@@ -26,6 +26,11 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.bugstack.middleware</groupId>
+            <artifactId>db-router-spring-boot-starter</artifactId>
+            <version>1.0.4</version>
+        </dependency>
 
         <!-- 系统模块 -->
         <dependency>

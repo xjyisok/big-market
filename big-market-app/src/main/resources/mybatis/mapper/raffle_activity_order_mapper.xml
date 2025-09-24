@@ -16,12 +16,14 @@
     </resultMap>
 
     <insert id="insert" parameterType="cn.bugstack.infrastructure.persistent.po.RaffleActivityOrder">
-        insert into raffle_activity_order(user_id, activity_id, activity_name, strategy_id, order_id, order_time, state, create_time, update_time)
-        values(#{userId}, #{activityId}, #{activityName}, #{strategyId}, #{orderId}, #{orderTime}, #{state}, now(), now())
+        insert into raffle_activity_order(user_id,sku,out_business_no,activity_id, activity_name, strategy_id, order_id, order_time,
+                                          total_count, day_count, month_count,state, create_time, update_time)
+        values(#{userId}, #{sku},#{outBusinessNo},#{activityId}, #{activityName}, #{strategyId}, #{orderId},
+               #{orderTime},#{totalCount}, #{dayCount}, #{monthCount},#{state}, now(), now())
     </insert>
 
     <select id="queryRaffleActivityOrderByUserId" parameterType="java.lang.String" resultMap="dataMap">
-        select user_id, activity_id, activity_name, strategy_id, order_id, order_time, state
+        select user_id,sku, activity_id, activity_name, strategy_id, order_id, order_time, state
         from raffle_activity_order
         where user_id = #{userId}
     </select>

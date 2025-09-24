@@ -1,10 +1,13 @@
 package cn.bugstack.domain.strategy.service.rule.tree.impl;
 
 import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
+import cn.bugstack.domain.strategy.respository.IStrategyRespository;
 import cn.bugstack.domain.strategy.service.rule.tree.ILogicTreeNode;
 import cn.bugstack.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * @author Fuzhengwei bugstack.cn @xjy
@@ -15,7 +18,8 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component("rule_lock")
 public class RuleLockLogicTreeNode implements ILogicTreeNode {
-    private Long userRaffleCount=10L;
+    @Resource
+    private IStrategyRespository strategyRespository;
     @Override
     public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId,String rulevalue) {
         log.info("规则过滤-次数锁 userId:{} strategyId:{} awardId:{}", userId, strategyId, awardId);
@@ -24,7 +28,9 @@ public class RuleLockLogicTreeNode implements ILogicTreeNode {
             raffleCount=Long.parseLong(rulevalue);
         }catch(Exception e){
             throw new RuntimeException("规则过滤-次数异常 ruleValue:"+rulevalue+"配置失败");
-        }if(userRaffleCount>=raffleCount){
+        }
+        Integer userRaffleCount=strategyRespository.queryTodayUserRaffleCount(userId,strategyId);
+        if(userRaffleCount>=raffleCount){
             return DefaultTreeFactory.TreeActionEntity.builder()
                     .ruleLogicCheckType(RuleLogicCheckTypeVO.ALLOW)
                     .build();

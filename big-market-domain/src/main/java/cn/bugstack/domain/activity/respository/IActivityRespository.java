@@ -1,8 +1,12 @@
 package cn.bugstack.domain.activity.respository;
 
-import cn.bugstack.domain.activity.model.entity.ActivityCountEntity;
-import cn.bugstack.domain.activity.model.entity.ActivityEntity;
-import cn.bugstack.domain.activity.model.entity.ActivitySkuEntity;
+import cn.bugstack.domain.activity.model.aggerate.CreatePartakeOrderAggregate;
+import cn.bugstack.domain.activity.model.aggerate.CreateQuotaOrderAggregate;
+import cn.bugstack.domain.activity.model.entity.*;
+import cn.bugstack.domain.activity.model.valobj.ActivitySkuStockKeyVO;
+
+import java.util.Date;
+import java.util.List;
 
 /**
  * @author Fuzhengwei bugstack.cn @小傅哥
@@ -17,4 +21,31 @@ public interface IActivityRespository {
 
     ActivityCountEntity queryRaffleActivityCountByActivityCountId(Long activityCountId);
 
+    void doSaveOrder(CreateQuotaOrderAggregate createOrderAggregate);
+
+    void cacheActivitySkuStockCount(String key, Integer stockCount);
+
+    boolean subtractionSkuStockCount(Long sku, String key, Date endDateTime);
+
+    void activitySkuStockConsumeSendQueue(ActivitySkuStockKeyVO build);
+
+    ActivitySkuStockKeyVO takeQueueValue();
+
+    void clearQueueValue();
+
+    void updateActivitySkuStock(Long sku);
+
+    void clearActivitySkuStock(Long sku);
+
+    UserRaffleOrderEntity queryNoUsedRaffleOrder(PartakeRaffleActivityEntity partakeRaffleActivityEntity);
+
+    ActivityAccountEntity queryActivityAccountByUserId(String userId,Long activityId);
+
+    ActivityAccountMonthEntity queryActivityAccountMonthByUserId(String userId, Long activityId, String month);
+
+    ActivityAccountDayEntity queryActivityAccountDayByUserId(String userId, Long activityId, String month);
+
+    void saveCreatePartakeOrderAggerate(CreatePartakeOrderAggregate createPartakeOrderAggregate);
+
+    List<ActivitySkuEntity> queryActivitySkuByActivityId(Long activityId);
 }

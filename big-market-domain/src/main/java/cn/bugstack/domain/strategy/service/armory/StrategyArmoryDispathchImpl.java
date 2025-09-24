@@ -99,4 +99,10 @@ public class StrategyArmoryDispathchImpl implements IStrategyArmory, IStrategyDi
         String key=Constants.RedisKey.STRATEGY_AWARD_COUNT_KEY+strategyId+Constants.UNDERLINE+awardId;
         return strategyRespository.substractAwardCount(key);
     }
+
+    @Override
+    public boolean assembleLotteryStrategyByActivityId(Long activityId) {
+        Long strategyId=strategyRespository.queryStrategyIdByActivity(activityId);
+        return assembleLotteryStrategy(strategyId);
+    }
 }

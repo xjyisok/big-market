@@ -77,5 +77,9 @@ public class RaffleActivityOrder {
      * 更新时间
      */
     private Date updateTime;
+    /**
+     * 唯一Id防止重复添加次数
+     */
+    private String outBusinessNo;
 
 }

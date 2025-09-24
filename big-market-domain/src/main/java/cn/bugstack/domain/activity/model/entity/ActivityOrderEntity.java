@@ -68,5 +68,13 @@ public class ActivityOrderEntity {
      * 订单状态
      */
     private OrderStateVO state;
+    /**
+     * 唯一Id防止重复添加次数
+     */
+    private String outBusinessNo;
+    /**
+     * sku
+     */
+    private Long sku;
 
 }

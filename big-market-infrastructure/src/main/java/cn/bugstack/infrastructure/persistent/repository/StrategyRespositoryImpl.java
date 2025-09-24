@@ -20,6 +20,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -46,7 +47,10 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
     IRuleTreeNodeLineDao ruleTreeNodeLineDao;
     @Autowired
     IRuleTreeNodeDao ruleTreeNodeDao;
-
+    @Resource
+    IRaffleActivityDao raffleactivityDao;
+    @Resource
+    IRaffleActivityAccountDayDao raffleactivityAccountDayDao;
     @Override
     public List<StrategyAwardEntity> queryStrategyAwardList(Long strategyId) {
         String cache = Constants.RedisKey.STRATEGY_AWARD_LIST_KEY+strategyId;
@@ -275,6 +279,25 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
 
         redisService.setValue(cachekey,strategyAwardEntity);
         return strategyAwardEntity;
+    }
+
+    @Override
+    public Long queryStrategyIdByActivity(Long activityId) {
+        return raffleactivityDao.queryStrategyIdByActivity(activityId);
+    }
+
+    @Override
+    public Integer queryTodayUserRaffleCount(String userId, Long strategyId) {
+        Long activtiyId=raffleactivityDao.queryActivityIdByStrategyId(strategyId);
+        RaffleActivityAccountDay raffleActivityAccountDay=new RaffleActivityAccountDay();
+        raffleActivityAccountDay.setUserId(userId);
+        raffleActivityAccountDay.setActivityId(activtiyId);
+        raffleActivityAccountDay.setDay(raffleActivityAccountDay.getCurrentDay());
+        RaffleActivityAccountDay raffleActivityAccountDayres=raffleactivityAccountDayDao.queryActivityAccountDayByUserId(raffleActivityAccountDay);
+        if(raffleActivityAccountDayres==null){
+            return 0;
+        }
+        return raffleActivityAccountDayres.getDayCount()-raffleActivityAccountDayres.getDayCountSurplus();
     }
 }
 

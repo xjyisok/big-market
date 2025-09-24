@@ -1,0 +1,134 @@
+25-09-21.19:50:16.778 [main            ] INFO  RaffleActivityPartakeServiceTest - Starting RaffleActivityPartakeServiceTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 24772 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-21.19:50:16.779 [main            ] INFO  RaffleActivityPartakeServiceTest - The following 1 profile is active: "dev"
+25-09-21.19:50:18.540 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-21.19:50:18.544 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-21.19:50:18.586 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+25-09-21.19:50:19.615 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-21.19:50:19.985 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.19:50:19.998 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.19:50:22.821 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-21.19:50:22.899 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+25-09-21.19:50:23.357 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#5546e754:0/SimpleConnection@4e26987b [delegate=amqp://admin@127.0.0.1:5672/, localPort= 50699]
+25-09-21.19:50:23.523 [main            ] INFO  RaffleActivityPartakeServiceTest - Started RaffleActivityPartakeServiceTest in 7.228 seconds (JVM running for 8.294)
+25-09-21.19:50:23.791 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-09-21.19:50:24.518 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-09-21.19:50:24.520 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-09-21.19:55:33.206 [main            ] INFO  RaffleActivityPartakeServiceTest - Starting RaffleActivityPartakeServiceTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 16628 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-21.19:55:33.208 [main            ] INFO  RaffleActivityPartakeServiceTest - The following 1 profile is active: "dev"
+25-09-21.19:55:34.149 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-21.19:55:34.153 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-21.19:55:34.197 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+25-09-21.19:55:35.146 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-21.19:55:35.493 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.19:55:35.504 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.19:55:38.131 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-21.19:55:38.213 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+25-09-21.19:55:38.290 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7f5ce33e:0/SimpleConnection@2e0163cb [delegate=amqp://admin@127.0.0.1:5672/, localPort= 51042]
+25-09-21.19:55:38.358 [main            ] INFO  RaffleActivityPartakeServiceTest - Started RaffleActivityPartakeServiceTest in 5.592 seconds (JVM running for 6.365)
+25-09-21.19:55:38.656 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-09-21.19:55:38.946 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-09-21.19:55:39.415 [main            ] INFO  RaffleActivityPartakeServiceTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
+25-09-21.19:55:39.419 [main            ] INFO  RaffleActivityPartakeServiceTest - 测试结果：{"activityId":100301,"activityName":"测试活动","orderId":"598525374415","orderState":"create","orderTime":1758455738560,"strategyId":100006,"userId":"xiaofuge"}
+25-09-21.19:55:39.434 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-09-21.19:55:40.015 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 定时任务，更新活动sku库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】
+25-09-21.19:55:40.106 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 定时任务，更新活动sku库存 sku:9011 activityId:100301
+25-09-21.19:55:40.106 [scheduling-1    ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-09-21.19:55:40.360 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-09-21.19:55:40.363 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-09-21.19:57:28.888 [main            ] INFO  RaffleActivityPartakeServiceTest - Starting RaffleActivityPartakeServiceTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 25320 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-21.19:57:28.889 [main            ] INFO  RaffleActivityPartakeServiceTest - The following 1 profile is active: "dev"
+25-09-21.19:57:29.904 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-21.19:57:29.908 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-21.19:57:29.947 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+25-09-21.19:57:30.899 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-21.19:57:31.242 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.19:57:31.258 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.19:57:33.716 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-21.19:57:33.795 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+25-09-21.19:57:33.870 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7f5ce33e:0/SimpleConnection@2e0163cb [delegate=amqp://admin@127.0.0.1:5672/, localPort= 51207]
+25-09-21.19:57:33.934 [main            ] INFO  RaffleActivityPartakeServiceTest - Started RaffleActivityPartakeServiceTest in 5.471 seconds (JVM running for 6.253)
+25-09-21.19:57:34.193 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-09-21.19:57:34.415 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-09-21.19:57:34.596 [main            ] INFO  AbstractRaffleActivityPartake - 存在未消费的抽奖订单userId:xiaofuge,activityId:100301 userorderentity:{"activityId":100301,"activityName":"测试活动","orderState":"create","orderTime":1758455739000,"strategyId":100006,"userId":"xiaofuge"}
+25-09-21.19:57:34.599 [main            ] INFO  RaffleActivityPartakeServiceTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
+25-09-21.19:57:34.599 [main            ] INFO  RaffleActivityPartakeServiceTest - 测试结果：{"activityId":100301,"activityName":"测试活动","orderState":"create","orderTime":1758455739000,"strategyId":100006,"userId":"xiaofuge"}
+25-09-21.19:57:34.616 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-09-21.19:57:34.926 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-09-21.19:57:34.929 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-09-21.19:58:11.050 [main            ] INFO  RaffleActivityPartakeServiceTest - Starting RaffleActivityPartakeServiceTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 14272 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-21.19:58:11.051 [main            ] INFO  RaffleActivityPartakeServiceTest - The following 1 profile is active: "dev"
+25-09-21.19:58:11.903 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-21.19:58:11.905 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-21.19:58:11.949 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+25-09-21.19:58:12.875 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-21.19:58:13.232 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.19:58:13.243 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.19:58:15.752 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-21.19:58:15.828 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+25-09-21.19:58:15.891 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#51ed2f68:0/SimpleConnection@407b41e6 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 51327]
+25-09-21.19:58:15.958 [main            ] INFO  RaffleActivityPartakeServiceTest - Started RaffleActivityPartakeServiceTest in 5.341 seconds (JVM running for 6.149)
+25-09-21.19:58:16.239 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-09-21.19:58:16.457 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-09-21.19:58:16.946 [main            ] INFO  RaffleActivityPartakeServiceTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
+25-09-21.19:58:16.949 [main            ] INFO  RaffleActivityPartakeServiceTest - 测试结果：{"activityId":100301,"activityName":"测试活动","orderId":"552920694816","orderState":"create","orderTime":1758455896152,"strategyId":100006,"userId":"xiaofuge"}
+25-09-21.19:58:16.966 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-09-21.19:58:17.963 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-09-21.19:58:17.967 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-09-21.20:00:52.752 [main            ] INFO  RaffleActivityPartakeServiceTest - Starting RaffleActivityPartakeServiceTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 25700 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-21.20:00:52.753 [main            ] INFO  RaffleActivityPartakeServiceTest - The following 1 profile is active: "dev"
+25-09-21.20:00:53.631 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-21.20:00:53.634 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-21.20:00:53.669 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+25-09-21.20:00:54.616 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-21.20:00:54.963 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.20:00:54.975 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.20:00:57.550 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-21.20:00:57.629 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+25-09-21.20:00:57.697 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#51ed2f68:0/SimpleConnection@407b41e6 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 51593]
+25-09-21.20:00:57.765 [main            ] INFO  RaffleActivityPartakeServiceTest - Started RaffleActivityPartakeServiceTest in 5.448 seconds (JVM running for 6.247)
+25-09-21.20:00:58.047 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-09-21.20:00:58.304 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-09-21.20:00:58.699 [main            ] INFO  RaffleActivityPartakeServiceTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
+25-09-21.20:00:58.703 [main            ] INFO  RaffleActivityPartakeServiceTest - 测试结果：{"activityId":100301,"activityName":"测试活动","orderId":"763562286327","orderState":"create","orderTime":1758456057953,"strategyId":100006,"userId":"xiaofuge"}
+25-09-21.20:00:58.719 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-09-21.20:00:58.760 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-09-21.20:00:58.764 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-09-21.20:01:12.852 [main            ] INFO  RaffleActivityPartakeServiceTest - Starting RaffleActivityPartakeServiceTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 24800 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-21.20:01:12.854 [main            ] INFO  RaffleActivityPartakeServiceTest - The following 1 profile is active: "dev"
+25-09-21.20:01:13.778 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-21.20:01:13.781 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-21.20:01:13.815 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+25-09-21.20:01:14.753 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-21.20:01:15.088 [redisson-netty-2-5] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.20:01:15.100 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.20:01:17.677 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-21.20:01:17.754 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+25-09-21.20:01:17.823 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7f5ce33e:0/SimpleConnection@2e0163cb [delegate=amqp://admin@127.0.0.1:5672/, localPort= 51699]
+25-09-21.20:01:17.897 [main            ] INFO  RaffleActivityPartakeServiceTest - Started RaffleActivityPartakeServiceTest in 5.512 seconds (JVM running for 6.323)
+25-09-21.20:01:18.163 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-09-21.20:01:18.378 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-09-21.20:01:18.561 [main            ] INFO  AbstractRaffleActivityPartake - 存在未消费的抽奖订单userId:xiaofuge,activityId:100301 userorderentity:{"activityId":100301,"activityName":"测试活动","orderState":"create","orderTime":1758456058000,"strategyId":100006,"userId":"xiaofuge"}
+25-09-21.20:01:18.564 [main            ] INFO  RaffleActivityPartakeServiceTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
+25-09-21.20:01:18.564 [main            ] INFO  RaffleActivityPartakeServiceTest - 测试结果：{"activityId":100301,"activityName":"测试活动","orderState":"create","orderTime":1758456058000,"strategyId":100006,"userId":"xiaofuge"}
+25-09-21.20:01:18.578 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-09-21.20:01:18.892 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-09-21.20:01:18.894 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-09-21.20:01:33.622 [main            ] INFO  RaffleActivityPartakeServiceTest - Starting RaffleActivityPartakeServiceTest using Java 1.8.0_462 on DESKTOP-8JHLMP8 with PID 24120 (started by XDUAI in D:\javacode\WebProj\big-market\big-market\big-market-app)
+25-09-21.20:01:33.624 [main            ] INFO  RaffleActivityPartakeServiceTest - The following 1 profile is active: "dev"
+25-09-21.20:01:34.490 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-09-21.20:01:34.493 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-09-21.20:01:34.529 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+25-09-21.20:01:35.490 [main            ] INFO  Version                - Redisson 3.23.4
+25-09-21.20:01:35.837 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.20:01:35.850 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+25-09-21.20:01:38.585 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-09-21.20:01:38.668 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [127.0.0.1:5672]
+25-09-21.20:01:38.740 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#51ed2f68:0/SimpleConnection@407b41e6 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 51810]
+25-09-21.20:01:38.807 [main            ] INFO  RaffleActivityPartakeServiceTest - Started RaffleActivityPartakeServiceTest in 5.625 seconds (JVM running for 6.391)
+25-09-21.20:01:39.095 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Starting...
+25-09-21.20:01:39.312 [main            ] INFO  HikariDataSource       - Retail_HikariCP - Start completed.
+25-09-21.20:01:39.708 [main            ] INFO  RaffleActivityPartakeServiceTest - 请求参数：{"activityId":100301,"userId":"xiaofuge"}
+25-09-21.20:01:39.711 [main            ] INFO  RaffleActivityPartakeServiceTest - 测试结果：{"activityId":100301,"activityName":"测试活动","orderId":"231205449286","orderState":"create","orderTime":1758456098998,"strategyId":100006,"userId":"xiaofuge"}
+25-09-21.20:01:39.726 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-09-21.20:01:39.799 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-09-21.20:01:39.801 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped

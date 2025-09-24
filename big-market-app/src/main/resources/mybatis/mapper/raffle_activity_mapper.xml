@@ -17,9 +17,18 @@
 
     <select id="queryRaffleActivityByActivityId" parameterType="java.lang.Long" resultType="cn.bugstack.infrastructure.persistent.po.RaffleActivity">
         select activity_id, activity_name, activity_desc, begin_date_time, end_date_time, strategy_id, state
-        from raffle_activity
+        from big_market.raffle_activity
         where activity_id = #{activityId}
     </select>
-
+    <select id="queryStrategyIdByActivity" parameterType="java.lang.Long" resultType="java.lang.Long">
+        select strategy_id
+        from big_market.raffle_activity
+        where activity_id = #{activityId}
+    </select>
+    <select id="queryActivityIdByStrategyId" parameterType="java.lang.Long" resultType="java.lang.Long">
+        select activity_id
+        from big_market.raffle_activity
+        where strategy_id = #{strategyId}
+    </select>
 
 </mapper>
