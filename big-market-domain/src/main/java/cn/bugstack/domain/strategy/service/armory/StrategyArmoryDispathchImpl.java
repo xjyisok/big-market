@@ -94,7 +94,7 @@ public class StrategyArmoryDispathchImpl implements IStrategyArmory, IStrategyDi
     }
 
     @Override
-    public Boolean substractAwardCount(Long strategyId, Integer awardId) {
+    public Boolean substractAwardCount(Long strategyId, Integer awardId,Date endDateTime) {
         System.out.println("开始扣减");
         String key=Constants.RedisKey.STRATEGY_AWARD_COUNT_KEY+strategyId+Constants.UNDERLINE+awardId;
         return strategyRespository.substractAwardCount(key);

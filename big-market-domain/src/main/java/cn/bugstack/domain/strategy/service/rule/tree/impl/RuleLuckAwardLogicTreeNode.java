@@ -6,6 +6,9 @@ import cn.bugstack.domain.strategy.service.rule.tree.ILogicTreeNode;
 import cn.bugstack.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
+
 /**
  * @author Fuzhengwei bugstack.cn @xjy
  * @description 兜底奖励节点
@@ -16,7 +19,7 @@ import org.springframework.stereotype.Component;
 @Component("rule_luck_award")
 public class RuleLuckAwardLogicTreeNode implements ILogicTreeNode {
     @Override
-    public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId,String rulevalue) {
+    public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId, String rulevalue, Date endDateTime) {
         log.info("规则过滤-保底奖励userId:{},strategyId:{},awardId:{}", userId, strategyId, awardId);
         String[] split = rulevalue.split(":");
         if(split.length == 0){

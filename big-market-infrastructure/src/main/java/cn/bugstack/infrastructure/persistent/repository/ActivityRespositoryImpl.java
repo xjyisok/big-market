@@ -26,7 +26,6 @@ import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -426,5 +425,15 @@ public class ActivityRespositoryImpl implements IActivityRespository {
         }
         return activitySkuEntities;
 
+    }
+
+    @Override
+    public int queryRaffleActivityAccountDayPartakeCount(String userId, Long activityId) {
+        RaffleActivityAccountDay raffleActivityAccountDay=new RaffleActivityAccountDay();
+        raffleActivityAccountDay.setUserId(userId);
+        raffleActivityAccountDay.setActivityId(activityId);
+        raffleActivityAccountDay.setDay(raffleActivityAccountDay.getCurrentDay());
+        Integer count=raffleActivityAccountDayDao.queryRaffleActivityAccountDayPartakeCount(raffleActivityAccountDay);
+        return count!=null?count:0;
     }
 }

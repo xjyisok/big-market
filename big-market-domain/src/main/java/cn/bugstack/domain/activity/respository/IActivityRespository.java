@@ -48,4 +48,6 @@ public interface IActivityRespository {
     void saveCreatePartakeOrderAggerate(CreatePartakeOrderAggregate createPartakeOrderAggregate);
 
     List<ActivitySkuEntity> queryActivitySkuByActivityId(Long activityId);
+
+    int queryRaffleActivityAccountDayPartakeCount(String userId, Long activityId);
 }

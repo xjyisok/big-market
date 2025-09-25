@@ -219,13 +219,24 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
 
     @Override
     public Boolean substractAwardCount(String key) {
-        long surplus= redisService.decr(key);
-        if(surplus==0){
-            redisService.setAtomicLong(key,0);
+        return substractAwardCount(key,null);
+    }
+
+    @Override
+    public Boolean substractAwardCount(String cachekey, Date endDateTime) {
+        long surplus= redisService.decr(cachekey);
+        if(surplus<0){
+            redisService.setAtomicLong(cachekey,0);
             return false;
         }
-        String lockkey=key+Constants.UNDERLINE+surplus;
-        Boolean lock=redisService.setNx(lockkey);
+        String lockkey=cachekey+Constants.UNDERLINE+surplus;
+        Boolean lock=false;
+        if(null==endDateTime){
+            lock=redisService.setNx(lockkey);
+        }else{
+            long expireMillies=endDateTime.getTime()-System.currentTimeMillis()+TimeUnit.DAYS.toMillis(1);
+            lock=redisService.setNx(lockkey,expireMillies,TimeUnit.MILLISECONDS);
+        }
         if(!lock){
             log.info("争锁失败，当前其他线程正在占用");
         }
@@ -270,11 +281,12 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
                 .strategyId(strategyAwardRes.getStrategyId())
                 .awardId(strategyAwardRes.getAwardId())
                 .awardTitle(strategyAwardRes.getAwardTitle())
-                .awardSubtitle(strategyAwardRes.getAwardSubTitle())
+                .awardSubtitle(strategyAwardRes.getAwardSubtitle())
                 .awardCount(strategyAwardRes.getAwardCount())
                 .awardCountSurplus(strategyAwardRes.getAwardCountSurplus())
                 .awardRate(strategyAwardRes.getAwardRate())
                 .sort(strategyAwardRes.getSort())
+                .ruleModels(strategyAwardRes.getRuleModels())
                 .build();
 
         redisService.setValue(cachekey,strategyAwardEntity);
@@ -298,6 +310,21 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
             return 0;
         }
         return raffleActivityAccountDayres.getDayCount()-raffleActivityAccountDayres.getDayCountSurplus();
+    }
+
+    @Override
+    public Map<String, Integer> queryAwardRuleLockCount(String[] treeIds) {
+        if(treeIds==null||treeIds.length==0){
+            return new HashMap<>();
+        }
+        Map<String, Integer> map=new HashMap<>();
+        List<RuleTreeNode>ruleTreeNodeList=ruleTreeNodeDao.queryRuleLocks(treeIds);
+        for(RuleTreeNode ruleTreeNode:ruleTreeNodeList){
+            String treeId=ruleTreeNode.getTreeId();
+            Integer rulevalue=Integer.parseInt(ruleTreeNode.getRuleValue());
+            map.put(treeId,rulevalue);
+        }
+        return map;
     }
 }
 

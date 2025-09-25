@@ -11,7 +11,7 @@ public class StrategyAward {
     private Long strategyId;
     private Integer awardId;
     private String awardTitle;
-    private String awardSubTitle;
+    private String awardSubtitle;
     private Integer awardCount;
     private Integer awardCountSurplus;
     private BigDecimal awardRate;

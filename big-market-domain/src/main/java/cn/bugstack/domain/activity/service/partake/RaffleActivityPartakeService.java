@@ -36,7 +36,8 @@ public class RaffleActivityPartakeService extends AbstractRaffleActivityPartake{
             activityAccountMonthEntity=new ActivityAccountMonthEntity();
             activityAccountMonthEntity.setUserId(userId);
             activityAccountMonthEntity.setActivityId(activityId);
-            activityAccountMonthEntity.setMonthCountSurplus(activityAccountEntity.getMonthCountSurplus());
+            //TODO理解一下为什么是总量二不是剩余量
+            activityAccountMonthEntity.setMonthCountSurplus(activityAccountEntity.getMonthCount());
             activityAccountMonthEntity.setMonthCount(activityAccountEntity.getMonthCount());
             activityAccountMonthEntity.setMonth(month);
         }
@@ -50,7 +51,8 @@ public class RaffleActivityPartakeService extends AbstractRaffleActivityPartake{
             activityAccountDayEntity=new ActivityAccountDayEntity();
             activityAccountDayEntity.setUserId(userId);
             activityAccountDayEntity.setActivityId(activityId);
-            activityAccountDayEntity.setDayCountSurplus(activityAccountEntity.getDayCountSurplus());
+            //TODO理解一下为什么是总量二不是剩余量
+            activityAccountDayEntity.setDayCountSurplus(activityAccountEntity.getDayCount());
             activityAccountDayEntity.setDayCount(activityAccountEntity.getDayCount());
             activityAccountDayEntity.setDay(day);
         }
@@ -76,6 +78,12 @@ public class RaffleActivityPartakeService extends AbstractRaffleActivityPartake{
                 .orderId(RandomStringUtils.randomNumeric(12))
                 .orderTime(currentDate)
                 .orderState(UserRaffleOrderStateVO.create)
+                .endDateTime(activityEntity.getEndDateTime())
                 .build();
+    }
+
+    @Override
+    public Integer queryRaffleActivityAccountDayPartakeCount(String userId, Long activityId) {
+        return activityRespository.queryRaffleActivityAccountDayPartakeCount(userId,activityId);
     }
 }
