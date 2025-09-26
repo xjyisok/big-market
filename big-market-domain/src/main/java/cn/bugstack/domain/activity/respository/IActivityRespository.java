@@ -29,9 +29,9 @@ public interface IActivityRespository {
 
     void activitySkuStockConsumeSendQueue(ActivitySkuStockKeyVO build);
 
-    ActivitySkuStockKeyVO takeQueueValue();
+    ActivitySkuStockKeyVO takeQueueValue(Long sku);
 
-    void clearQueueValue();
+    void clearQueueValue(Long sku);
 
     void updateActivitySkuStock(Long sku);
 
@@ -50,4 +50,6 @@ public interface IActivityRespository {
     List<ActivitySkuEntity> queryActivitySkuByActivityId(Long activityId);
 
     int queryRaffleActivityAccountDayPartakeCount(String userId, Long activityId);
+
+    public List<Long> scanAllSkuFromQueue();
 }

@@ -203,24 +203,45 @@ public class ActivityRespositoryImpl implements IActivityRespository {
 
     @Override
     public void activitySkuStockConsumeSendQueue(ActivitySkuStockKeyVO activitySkuStockKeyVO) {
-        String cachekey=Constants.RedisKey.ACTIVITY_SKU_COUNT_QUERY_KEY;
+        String cachekey=Constants.RedisKey.ACTIVITY_SKU_COUNT_QUERY_KEY+Constants.UNDERLINE+activitySkuStockKeyVO.getSku();
         RBlockingQueue<ActivitySkuStockKeyVO>blockingQueue=redisService.getBlockingQueue(cachekey);
         RDelayedQueue<ActivitySkuStockKeyVO>delayedQueue=redisService.getDelayedQueue(blockingQueue);
         delayedQueue.offer(activitySkuStockKeyVO,3,TimeUnit.SECONDS);
     }
 
     @Override
-    public ActivitySkuStockKeyVO takeQueueValue() {
-        String cachekey=Constants.RedisKey.ACTIVITY_SKU_COUNT_QUERY_KEY;
+    public ActivitySkuStockKeyVO takeQueueValue(Long sku) {
+        String cachekey=Constants.RedisKey.ACTIVITY_SKU_COUNT_QUERY_KEY+Constants.UNDERLINE+sku;
         RBlockingQueue<ActivitySkuStockKeyVO>blockingQueue=redisService.getBlockingQueue(cachekey);
         return blockingQueue.poll();
     }
 
     @Override
-    public void clearQueueValue() {
-        String cachekey=Constants.RedisKey.ACTIVITY_SKU_COUNT_QUERY_KEY;
+    public void clearQueueValue(Long sku) {
+        String cachekey=Constants.RedisKey.ACTIVITY_SKU_COUNT_QUERY_KEY+Constants.UNDERLINE+sku;
         RBlockingQueue<ActivitySkuStockKeyVO>blockingQueue=redisService.getBlockingQueue(cachekey);
         blockingQueue.clear();
+    }
+    //扫描redis中所有sku队列的sku值
+    @Override
+    public List<Long> scanAllSkuFromQueue() {
+        String pattern = Constants.RedisKey.ACTIVITY_SKU_COUNT_QUERY_KEY + Constants.UNDERLINE + "*";
+        Iterable<String> keys = redisService.scanKeys(pattern);
+
+        List<Long> skuList = new ArrayList<>();
+        for (String key : keys) {
+            // key 格式：ACTIVITY_SKU_COUNT_QUERY_KEY_{sku}
+            String[] parts = key.split(Constants.UNDERLINE);
+            if (parts.length > 0) {
+                try {
+                    Long sku = Long.valueOf(parts[parts.length - 1]);
+                    skuList.add(sku);
+                } catch (NumberFormatException e) {
+                    // 忽略解析失败的 key
+                }
+            }
+        }
+        return skuList;
     }
 
     @Override
