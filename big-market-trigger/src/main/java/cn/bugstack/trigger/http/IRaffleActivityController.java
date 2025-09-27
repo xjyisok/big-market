@@ -6,6 +6,9 @@ import cn.bugstack.domain.activity.service.armory.IActivityArmory;
 import cn.bugstack.domain.award.model.entity.UserAwardRecordEntity;
 import cn.bugstack.domain.award.model.valobj.AwardSendStateVO;
 import cn.bugstack.domain.award.service.IAwardService;
+import cn.bugstack.domain.rebate.model.entity.BehaviorEntity;
+import cn.bugstack.domain.rebate.model.valobj.BehaviorTypeVO;
+import cn.bugstack.domain.rebate.service.IBehaviorRebateService;
 import cn.bugstack.domain.strategy.model.entity.RaffleAwardEntity;
 import cn.bugstack.domain.strategy.model.entity.RaffleFactoryEntity;
 import cn.bugstack.domain.strategy.service.IRaffleAward;
@@ -20,16 +23,20 @@ import cn.bugstack.types.exception.AppException;
 import cn.bugstack.types.model.Response;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Slf4j
 @RestController()
 @CrossOrigin("${app.config.cross-origin}")
 @RequestMapping("/api/${app.config.api-version}/raffle/activity")
 public class IRaffleActivityController implements IRaffleActivityService {
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
     @Resource
     IActivityArmory activityArmory;
     @Resource
@@ -40,6 +47,8 @@ public class IRaffleActivityController implements IRaffleActivityService {
     IRaffleStrategy raffleStrategy;
     @Resource
     IAwardService awardService;
+    @Resource
+    IBehaviorRebateService behaviorRebateService;
     @RequestMapping(value = "/armory",method = RequestMethod.GET)
     @Override
     public Response<Boolean> armory(@RequestParam Long activityId) {
@@ -118,6 +127,38 @@ public class IRaffleActivityController implements IRaffleActivityService {
                     .info(ResponseCode.UN_ERROR.getInfo())
                     .build();
 
+        }
+    }
+
+    @Override
+    @RequestMapping(value = "/calendar_sign_rebate",method = RequestMethod.POST)
+    public Response<Boolean> calendarSignRebate(String userId) {
+        try {
+            BehaviorEntity behaviorEntity = new BehaviorEntity();
+            behaviorEntity.setUserId(userId);
+            behaviorEntity.setBehaviorTypeVO(BehaviorTypeVO.SIGN);
+            behaviorEntity.setOutBusinessNo(dateFormat.format(new Date()));
+            List<String>orserIds=behaviorRebateService.createOrder(behaviorEntity);
+            log.info("日历签到返利完成userID:{},orderIds:{}", userId, orserIds);
+            return  Response.<Boolean>builder()
+                    .code(ResponseCode.SUCCESS.getCode())
+                    .info(ResponseCode.SUCCESS.getInfo())
+                    .data(true)
+                    .build();
+        }catch (AppException e){
+            log.error("返利订单创建异常userID:{}", userId, e);
+            return Response.<Boolean>builder()
+                    .code(e.getCode())
+                    .info(e.getInfo())
+                    .data(false)
+                    .build();
+        }catch (Exception e){
+            log.error("未知错误userID:{}", userId, e);
+            return Response.<Boolean>builder()
+                    .code(ResponseCode.UN_ERROR.getCode())
+                    .info(ResponseCode.UN_ERROR.getInfo())
+                    .data(false)
+                    .build();
         }
     }
 }

@@ -145,6 +145,21 @@ public class ActivityRespositoryImpl implements IActivityRespository {
             raffleActivityAccount.setDayCountSurplus(createOrderAggregate.getDayCount());
             raffleActivityAccount.setMonthCount(createOrderAggregate.getMonthCount());
             raffleActivityAccount.setMonthCountSurplus(createOrderAggregate.getMonthCount());
+            // 账户对象 - 月
+            RaffleActivityAccountMonth raffleActivityAccountMonth = new RaffleActivityAccountMonth();
+            raffleActivityAccountMonth.setUserId(createOrderAggregate.getUserId());
+            raffleActivityAccountMonth.setActivityId(createOrderAggregate.getActivityId());
+            raffleActivityAccountMonth.setMonth(raffleActivityAccountMonth.currentMonth());
+            raffleActivityAccountMonth.setMonthCount(createOrderAggregate.getMonthCount());
+            raffleActivityAccountMonth.setMonthCountSurplus(createOrderAggregate.getMonthCount());
+
+            // 账户对象 - 日
+            RaffleActivityAccountDay raffleActivityAccountDay = new RaffleActivityAccountDay();
+            raffleActivityAccountDay.setUserId(createOrderAggregate.getUserId());
+            raffleActivityAccountDay.setActivityId(createOrderAggregate.getActivityId());
+            raffleActivityAccountDay.setDay(raffleActivityAccountDay.getCurrentDay());
+            raffleActivityAccountDay.setDayCount(createOrderAggregate.getDayCount());
+            raffleActivityAccountDay.setDayCountSurplus(createOrderAggregate.getDayCount());
 
             // 以用户ID作为切分键，通过 doRouter 设定路由【这样就保证了下面的操作，都是同一个链接下，也就保证了事务的特性】
             dbRouter.doRouter(createOrderAggregate.getUserId());
@@ -159,6 +174,24 @@ public class ActivityRespositoryImpl implements IActivityRespository {
                     if (0 == count) {
                         raffleActivityAccountDao.insert(raffleActivityAccount);
                     }
+                    //@description这里为什么不需要在日月账户不存在的时候创建，因为日月账户是和抽奖活动绑定的，每日/月首次抽奖时会在对应日月账户
+                    //表上创建账户，账户余额从raffle_activity_account上取，因此在当日或者当月没有抽奖时不需要创建日月账户，日月账户的作用是为了方便维护当日抽奖记录，
+                    //未抽奖前只需要将返利打入到raffle_activity_account里面，抽奖时会从raffle_activity_account里取出对应额度创建账户。
+                    //至于在测试中，public void test_createOrder() {
+                    //        BehaviorEntity behaviorEntity = new BehaviorEntity();
+                    //        behaviorEntity.setUserId("xiaofuge");
+                    //        behaviorEntity.setBehaviorTypeVO(BehaviorTypeVO.SIGN);
+                    //        // 重复的 OutBusinessNo 会报错唯一索引冲突，这也是保证幂等的手段，确保不会多记账
+                    //        behaviorEntity.setOutBusinessNo("20240413");
+                    //
+                    //        List<String> orderIds = behaviorRebateService.createOrder(behaviorEntity);
+                    //        log.info("请求参数：{}", JSON.toJSONString(behaviorEntity));
+                    //        log.info("测试结果：{}", JSON.toJSONString(orderIds));
+                    //    }是发放签到返利，如果当日知识签到但是没有抽奖那么日月账户不会被创建，因为只有在首次抽奖后后续抽奖才会走日月账户
+                    //用户-->签到-->update raffle_activity_account-->抽奖->insert raffle_day_account/raffle_month_account-->后续抽奖-->update{raffle_activity_account，raffle_day_account/raffle_month_account}
+                    //                          \<------------------------------------------------|
+                    raffleActivityAccountDayDao.addDayAccountQuota(raffleActivityAccountDay);
+                    raffleActivityAccountMonthDao.addMonthAccountQuota(raffleActivityAccountMonth);
                     return 1;
                 } catch (DuplicateKeyException e) {
                     status.setRollbackOnly();
