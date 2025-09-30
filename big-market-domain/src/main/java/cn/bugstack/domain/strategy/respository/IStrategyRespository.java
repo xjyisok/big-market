@@ -4,6 +4,7 @@ import cn.bugstack.domain.strategy.model.entity.StrategyAwardEntity;
 import cn.bugstack.domain.strategy.model.entity.StrategyEntity;
 import cn.bugstack.domain.strategy.model.entity.StrategyRuleEntity;
 import cn.bugstack.domain.strategy.model.vo.RuleTreeVO;
+import cn.bugstack.domain.strategy.model.vo.RuleWeightVO;
 import cn.bugstack.domain.strategy.model.vo.StrategyAwardRuleModelVO;
 import cn.bugstack.domain.strategy.model.vo.StrategyAwardStockModelVO;
 
@@ -44,4 +45,8 @@ public interface IStrategyRespository {
     Integer queryTodayUserRaffleCount(String userId, Long strategyId);
 
     Map<String, Integer> queryAwardRuleLockCount(String[] treeIds);
+
+    Integer queryActivityAccountTotalUsedCount(String userId, Long strategyId);
+
+    List<RuleWeightVO> queryAwardRuleWeight(Long strategyId);
 }

@@ -86,4 +86,5 @@ public class RaffleActivityPartakeService extends AbstractRaffleActivityPartake{
     public Integer queryRaffleActivityAccountDayPartakeCount(String userId, Long activityId) {
         return activityRespository.queryRaffleActivityAccountDayPartakeCount(userId,activityId);
     }
+
 }

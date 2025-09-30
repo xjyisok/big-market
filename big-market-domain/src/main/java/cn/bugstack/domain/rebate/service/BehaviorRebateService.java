@@ -45,6 +45,7 @@ public class BehaviorRebateService implements IBehaviorRebateService {
                     .rebateType(dailyBehaviorRebateVO.getRebateType())
                     .rebateConfig(dailyBehaviorRebateVO.getRebateConfig())
                     .bizId(bizId)
+                    .outBusinessNo(behaviorEntity.getOutBusinessNo())
                     .build();
             orderIds.add(behaviorRebateOrderEntity.getOrderId());
             //MQ消息
@@ -77,5 +78,10 @@ public class BehaviorRebateService implements IBehaviorRebateService {
         iBehaviorRebateRespository.saveUserRebateRecord(behaviorEntity.getUserId(), behaviorRebateAggregates);
         //返回订单集合
         return orderIds;
+    }
+
+    @Override
+    public List<BehaviorRebateOrderEntity> queryRebateOrderByOutBusinessId(String userId, String outBusinessId) {
+        return iBehaviorRebateRespository.queryRebateOrderByOutBusinessId( userId, outBusinessId);
     }
 }

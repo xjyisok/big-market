@@ -4,10 +4,7 @@ import cn.bugstack.domain.strategy.model.entity.RaffleFactoryEntity;
 import cn.bugstack.domain.strategy.model.entity.RuleActionEntity;
 import cn.bugstack.domain.strategy.model.entity.RuleMatterEntity;
 import cn.bugstack.domain.strategy.model.entity.StrategyAwardEntity;
-import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
-import cn.bugstack.domain.strategy.model.vo.RuleTreeVO;
-import cn.bugstack.domain.strategy.model.vo.StrategyAwardRuleModelVO;
-import cn.bugstack.domain.strategy.model.vo.StrategyAwardStockModelVO;
+import cn.bugstack.domain.strategy.model.vo.*;
 import cn.bugstack.domain.strategy.respository.IStrategyRespository;
 import cn.bugstack.domain.strategy.service.AbstractRaffleStrategy;
 import cn.bugstack.domain.strategy.service.IRaffleAward;
@@ -26,10 +23,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -190,5 +184,16 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRa
     @Override
     public Map<String, Integer> queryAwardRuleLockCount(String[] treeIds) {
         return iStrategyRespository.queryAwardRuleLockCount(treeIds);
+    }
+
+    @Override
+    public List<RuleWeightVO> queryAwardRuleWeight(Long strategyId) {
+        return iStrategyRespository.queryAwardRuleWeight(strategyId);
+    }
+
+    @Override
+    public List<RuleWeightVO> queryAwardRuleWeightByActivityId(Long activityId) {
+        Long strategyId=iStrategyRespository.queryStrategyIdByActivity(activityId);
+        return queryAwardRuleWeight(strategyId);
     }
 }

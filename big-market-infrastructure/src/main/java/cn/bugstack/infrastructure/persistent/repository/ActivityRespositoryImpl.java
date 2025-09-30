@@ -490,4 +490,73 @@ public class ActivityRespositoryImpl implements IActivityRespository {
         Integer count=raffleActivityAccountDayDao.queryRaffleActivityAccountDayPartakeCount(raffleActivityAccountDay);
         return count!=null?count:0;
     }
+
+    @Override
+    public ActivityAccountEntity queryUserActivityAccount(String userId, Long activityId) {
+        RaffleActivityAccount raffleActivityAccount=new RaffleActivityAccount();
+        raffleActivityAccount.setUserId(userId);
+        raffleActivityAccount.setActivityId(activityId);
+        RaffleActivityAccount raffleActivityAccountRes=raffleActivityAccountDao.queryActivityAccountByUserId(raffleActivityAccount);
+        if (raffleActivityAccountRes == null){
+            return ActivityAccountEntity.builder()
+                    .userId(userId)
+                    .activityId(activityId)
+                    .dayCount(0)
+                    .dayCountSurplus(0)
+                    .monthCount(0)
+                    .monthCountSurplus(0)
+                    .totalCount(0)
+                    .totalCountSurplus(0)
+                    .build();
+        }
+        RaffleActivityAccountMonth raffleActivityAccountMonthres=new RaffleActivityAccountMonth();
+        raffleActivityAccountMonthres.setUserId(userId);
+        raffleActivityAccountMonthres.setActivityId(activityId);
+        raffleActivityAccountMonthres.setMonth(raffleActivityAccountMonthres.getMonth());
+        RaffleActivityAccountMonth raffleActivityAccountMonth = raffleActivityAccountMonthDao.queryActivityAccountMonthByUserId(raffleActivityAccountMonthres);
+
+        // 3. 查询日账户额度
+        RaffleActivityAccountDay raffleActivityAccountDayres=new RaffleActivityAccountDay();
+        raffleActivityAccountDayres.setUserId(userId);
+        raffleActivityAccountDayres.setActivityId(activityId);
+        raffleActivityAccountDayres.setDay(raffleActivityAccountDayres.getCurrentDay());
+        RaffleActivityAccountDay raffleActivityAccountDay = raffleActivityAccountDayDao.queryActivityAccountDayByUserId(raffleActivityAccountDayres);
+
+        // 组装对象
+        ActivityAccountEntity activityAccountEntity = new ActivityAccountEntity();
+        activityAccountEntity.setUserId(userId);
+        activityAccountEntity.setActivityId(activityId);
+        activityAccountEntity.setTotalCount(raffleActivityAccountRes.getTotalCount());
+        activityAccountEntity.setTotalCountSurplus(raffleActivityAccountRes.getTotalCountSurplus());
+
+        // 如果没有创建日账户，则从总账户中获取日总额度填充。「当新创建日账户时，会获得总账户额度」
+        if (null == raffleActivityAccountDay) {
+            activityAccountEntity.setDayCount(raffleActivityAccountRes.getDayCount());
+            activityAccountEntity.setDayCountSurplus(raffleActivityAccountRes.getDayCount());
+        } else {
+            activityAccountEntity.setDayCount(raffleActivityAccountDay.getDayCount());
+            activityAccountEntity.setDayCountSurplus(raffleActivityAccountDay.getDayCountSurplus());
+        }
+
+        // 如果没有创建月账户，则从总账户中获取月总额度填充。「当新创建日账户时，会获得总账户额度」
+        if (null == raffleActivityAccountMonth) {
+            activityAccountEntity.setMonthCount(raffleActivityAccountRes.getMonthCount());
+            activityAccountEntity.setMonthCountSurplus(raffleActivityAccountRes.getMonthCount());
+        } else {
+            activityAccountEntity.setMonthCount(raffleActivityAccountMonth.getMonthCount());
+            activityAccountEntity.setMonthCountSurplus(raffleActivityAccountMonth.getMonthCountSurplus());
+        }
+
+        return activityAccountEntity;
+
+    }
+
+    @Override
+    public Integer queryRaffleActivityAccountPartakeCount(Long activityId, String userId) {
+        RaffleActivityAccount raffleActivityAccount=new RaffleActivityAccount();
+        raffleActivityAccount.setUserId(userId);
+        raffleActivityAccount.setActivityId(activityId);
+        RaffleActivityAccount raffleActivityAccountRes=raffleActivityAccountDao.queryActivityAccountByUserId(raffleActivityAccount);
+        return raffleActivityAccountRes.getTotalCount()-raffleActivityAccountRes.getTotalCountSurplus();
+    }
 }

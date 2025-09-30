@@ -2,6 +2,8 @@ package cn.bugstack.trigger.api;
 
 import cn.bugstack.trigger.api.dto.ActivityDrawRequestDTO;
 import cn.bugstack.trigger.api.dto.ActivityDrawResponseDTO;
+import cn.bugstack.trigger.api.dto.UserActivityAccountRequestDTO;
+import cn.bugstack.trigger.api.dto.UserActivityAccountResponseDTO;
 import cn.bugstack.types.model.Response;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 
@@ -25,7 +27,7 @@ public interface IRaffleActivityService {
      * @return 返回结果
      */
     Response<ActivityDrawResponseDTO> draw(ActivityDrawRequestDTO request);
-
-    Response<Boolean>calendarSignRebate(String userId);
-
+    public Response<Boolean> calendarSignRebate(String userId);
+    Response<Boolean>isCalendarSignRebate(String userId);
+    Response<UserActivityAccountResponseDTO>queryUserActivityAccount(UserActivityAccountRequestDTO request);
 }

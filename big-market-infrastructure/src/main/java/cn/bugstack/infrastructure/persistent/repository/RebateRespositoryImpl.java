@@ -76,6 +76,7 @@ public class RebateRespositoryImpl implements IBehaviorRebateRespository {
                         userBehaviorRebateOrder.setRebateDesc(behaviorRebateOrderEntity.getRebateDesc());
                         userBehaviorRebateOrder.setRebateType(behaviorRebateOrderEntity.getRebateType());
                         userBehaviorRebateOrder.setRebateConfig(behaviorRebateOrderEntity.getRebateConfig());
+                        userBehaviorRebateOrder.setOutBusinessNo(behaviorRebateOrderEntity.getOutBusinessNo());
                         userBehaviorRebateOrder.setBizId(behaviorRebateOrderEntity.getBizId());
                         userBehaiviorRebateOrderDao.insert(userBehaviorRebateOrder);
 
@@ -117,5 +118,27 @@ public class RebateRespositoryImpl implements IBehaviorRebateRespository {
         }
 
 
+    }
+
+    @Override
+    public List<BehaviorRebateOrderEntity> queryRebateOrderByOutBusinessId(String userId, String outBusinessId) {
+        UserBehaviorRebateOrder userBehaviorRebateOrder = new UserBehaviorRebateOrder();
+        userBehaviorRebateOrder.setUserId(userId);
+        userBehaviorRebateOrder.setOutBusinessNo(outBusinessId);
+        List<UserBehaviorRebateOrder>userBehaviorRebateOrderList=userBehaiviorRebateOrderDao.queryRebateOrderByOutBusinessId(userBehaviorRebateOrder);
+        List<BehaviorRebateOrderEntity> behaviorRebateOrderEntities=new ArrayList<>();
+        for(UserBehaviorRebateOrder userBehaviorRebateOrderres:userBehaviorRebateOrderList){
+            BehaviorRebateOrderEntity behaviorRebateOrder=new BehaviorRebateOrderEntity();
+            behaviorRebateOrder.setUserId(userBehaviorRebateOrderres.getUserId());
+            behaviorRebateOrder.setOrderId(userBehaviorRebateOrderres.getOrderId());
+            behaviorRebateOrder.setBehaviorType(userBehaviorRebateOrderres.getBehaviorType());
+            behaviorRebateOrder.setRebateDesc(userBehaviorRebateOrderres.getRebateDesc());
+            behaviorRebateOrder.setRebateType(userBehaviorRebateOrderres.getRebateType());
+            behaviorRebateOrder.setRebateConfig(userBehaviorRebateOrderres.getRebateConfig());
+            behaviorRebateOrder.setOutBusinessNo(userBehaviorRebateOrderres.getOutBusinessNo());
+            behaviorRebateOrder.setBizId(userBehaviorRebateOrderres.getBizId());
+            behaviorRebateOrderEntities.add(behaviorRebateOrder);
+        }
+        return behaviorRebateOrderEntities;
     }
 }

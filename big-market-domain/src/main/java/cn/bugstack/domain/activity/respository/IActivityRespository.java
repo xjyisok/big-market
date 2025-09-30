@@ -52,4 +52,8 @@ public interface IActivityRespository {
     int queryRaffleActivityAccountDayPartakeCount(String userId, Long activityId);
 
     public List<Long> scanAllSkuFromQueue();
+
+    ActivityAccountEntity queryUserActivityAccount(String userId, Long activityId);
+
+    Integer queryRaffleActivityAccountPartakeCount(Long activityId, String userId);
 }
