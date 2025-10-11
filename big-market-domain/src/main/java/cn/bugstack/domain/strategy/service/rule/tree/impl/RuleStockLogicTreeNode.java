@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.concurrent.TransferQueue;
 /**
  * @author Fuzhengwei bugstack.cn @xjy
@@ -25,9 +26,9 @@ public class RuleStockLogicTreeNode implements ILogicTreeNode {
     @Resource
     IStrategyRespository strategyRespository;
     @Override
-    public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId,String rulevalue) {
+    public DefaultTreeFactory.TreeActionEntity logic(String userId, Long strategyId, Integer awardId, String rulevalue, Date endDateTime) {
         log.info("规则过滤-库存扣减userId:{},strategyId:{},awardId:{}", userId, strategyId, awardId);
-        Boolean issubstratctsucceed=strategyDisPatch.substractAwardCount(strategyId, awardId);
+        Boolean issubstratctsucceed=strategyDisPatch.substractAwardCount(strategyId, awardId,endDateTime);
         System.out.println(issubstratctsucceed);
         if(issubstratctsucceed){
             strategyRespository.awardStockConsumeSendQueue(StrategyAwardStockModelVO.builder()

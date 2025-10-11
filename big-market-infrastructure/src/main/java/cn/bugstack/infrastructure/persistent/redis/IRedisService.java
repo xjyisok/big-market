@@ -253,4 +253,7 @@ public interface IRedisService {
 
     Boolean setNx(String key);
     Boolean setNx(String key, long timeout, TimeUnit unit);
+
+    public Iterable<String> scanKeys(String pattern);
+
 }

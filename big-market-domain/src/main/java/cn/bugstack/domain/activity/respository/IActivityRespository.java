@@ -29,9 +29,9 @@ public interface IActivityRespository {
 
     void activitySkuStockConsumeSendQueue(ActivitySkuStockKeyVO build);
 
-    ActivitySkuStockKeyVO takeQueueValue();
+    ActivitySkuStockKeyVO takeQueueValue(Long sku);
 
-    void clearQueueValue();
+    void clearQueueValue(Long sku);
 
     void updateActivitySkuStock(Long sku);
 
@@ -48,4 +48,12 @@ public interface IActivityRespository {
     void saveCreatePartakeOrderAggerate(CreatePartakeOrderAggregate createPartakeOrderAggregate);
 
     List<ActivitySkuEntity> queryActivitySkuByActivityId(Long activityId);
+
+    int queryRaffleActivityAccountDayPartakeCount(String userId, Long activityId);
+
+    public List<Long> scanAllSkuFromQueue();
+
+    ActivityAccountEntity queryUserActivityAccount(String userId, Long activityId);
+
+    Integer queryRaffleActivityAccountPartakeCount(Long activityId, String userId);
 }

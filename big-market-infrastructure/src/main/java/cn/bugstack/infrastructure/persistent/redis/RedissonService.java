@@ -176,4 +176,9 @@ public class RedissonService implements IRedisService {
     public Boolean setNx(String key, long timeout, TimeUnit unit) {
         return redissonClient.getBucket(key).trySet("lock", timeout, unit);
     }
+
+    @Override
+    public Iterable<String> scanKeys(String pattern) {
+        return redissonClient.getKeys().getKeysByPattern(pattern);
+    }
 }

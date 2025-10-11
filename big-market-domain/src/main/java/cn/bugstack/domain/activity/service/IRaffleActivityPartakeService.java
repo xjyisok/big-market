@@ -1,5 +1,6 @@
 package cn.bugstack.domain.activity.service;
 
+import cn.bugstack.domain.activity.model.entity.ActivityAccountEntity;
 import cn.bugstack.domain.activity.model.entity.PartakeRaffleActivityEntity;
 import cn.bugstack.domain.activity.model.entity.UserRaffleOrderEntity;
 
@@ -9,4 +10,6 @@ import cn.bugstack.domain.activity.model.entity.UserRaffleOrderEntity;
 public interface IRaffleActivityPartakeService {
     UserRaffleOrderEntity createOrder(PartakeRaffleActivityEntity partakeRaffleActivityEntity);
     UserRaffleOrderEntity createOrder(Long activityId, String userId);
+
+    Integer queryRaffleActivityAccountDayPartakeCount(String userId, Long activityId);
 }

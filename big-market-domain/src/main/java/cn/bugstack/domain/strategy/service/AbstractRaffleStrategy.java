@@ -14,10 +14,12 @@ import cn.bugstack.domain.strategy.service.rule.filter.factory.DefaultLogicFacto
 import cn.bugstack.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import cn.bugstack.types.enums.ResponseCode;
 import cn.bugstack.types.exception.AppException;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 @Slf4j
 public abstract class AbstractRaffleStrategy implements IRaffleStrategy,IRaffleStock{
@@ -117,7 +119,7 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy,IRaffleS
      * @return 过滤结果【奖品ID，会根据抽奖次数判断、库存判断、兜底兜里返回最终的可获得奖品信息】
      */
     public abstract DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Long strategyId, Integer awardId);
-
+    public abstract DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Long strategyId, Integer awardId, Date enddate);
     @Override
     public StrategyAwardStockModelVO takeQueueValue() throws InterruptedException {
         return null;

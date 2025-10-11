@@ -4,14 +4,12 @@ import cn.bugstack.domain.strategy.model.entity.RaffleFactoryEntity;
 import cn.bugstack.domain.strategy.model.entity.RuleActionEntity;
 import cn.bugstack.domain.strategy.model.entity.RuleMatterEntity;
 import cn.bugstack.domain.strategy.model.entity.StrategyAwardEntity;
-import cn.bugstack.domain.strategy.model.vo.RuleLogicCheckTypeVO;
-import cn.bugstack.domain.strategy.model.vo.RuleTreeVO;
-import cn.bugstack.domain.strategy.model.vo.StrategyAwardRuleModelVO;
-import cn.bugstack.domain.strategy.model.vo.StrategyAwardStockModelVO;
+import cn.bugstack.domain.strategy.model.vo.*;
 import cn.bugstack.domain.strategy.respository.IStrategyRespository;
 import cn.bugstack.domain.strategy.service.AbstractRaffleStrategy;
 import cn.bugstack.domain.strategy.service.IRaffleAward;
 import cn.bugstack.domain.strategy.service.armory.IStrategyDisPatch;
+import cn.bugstack.domain.strategy.service.IRaffleRule;
 import cn.bugstack.domain.strategy.service.rule.chain.ILogicChain;
 import cn.bugstack.domain.strategy.service.rule.chain.factory.DefaultLogicChainFactory;
 import cn.bugstack.domain.strategy.service.rule.filter.ILogicFilter;
@@ -25,15 +23,12 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRaffleAward {
+public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRaffleAward, IRaffleRule {
     @Resource
     private DefaultLogicFactory defaultLogicFactory;
     @Autowired
@@ -41,6 +36,11 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRa
 
     @Override
     public DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Long strategyId, Integer awardId) {
+        return raffleLogicTree(userId, strategyId, awardId, null);
+    }
+
+    @Override
+    public DefaultTreeFactory.StrategyAwardVO raffleLogicTree(String userId, Long strategyId, Integer awardId, Date enddate) {
         StrategyAwardRuleModelVO ruleModelVO = respository.queryStrategyAwardRuleModels(strategyId,awardId);
         if(ruleModelVO == null){
             return DefaultTreeFactory.StrategyAwardVO.builder().awardId(awardId).build();
@@ -50,7 +50,7 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRa
             throw new RuntimeException("存在抽奖策略配置的规则模型Key，未在库表");
         }
         IDecisionTreeEngine treeEngine=defaultTreeFactory.openLogicTree(ruletreeVO);
-        return treeEngine.process(userId,strategyId,awardId);
+        return treeEngine.process(userId,strategyId,awardId,enddate);
     }
 
     @Override
@@ -173,5 +173,27 @@ public class DefaultRaffleStrategy extends AbstractRaffleStrategy implements IRa
     @Override
     public List<StrategyAwardEntity> queryRaffleStrategyAwardList(Long strategyId) {
         return iStrategyRespository.queryStrategyAwardList(strategyId);
+    }
+
+    @Override
+    public List<StrategyAwardEntity> queryRaffleStrategyAwardListByActivityId(Long activityId) {
+        Long strategyId=iStrategyRespository.queryStrategyIdByActivity(activityId);
+        return queryRaffleStrategyAwardList(strategyId);
+    }
+
+    @Override
+    public Map<String, Integer> queryAwardRuleLockCount(String[] treeIds) {
+        return iStrategyRespository.queryAwardRuleLockCount(treeIds);
+    }
+
+    @Override
+    public List<RuleWeightVO> queryAwardRuleWeight(Long strategyId) {
+        return iStrategyRespository.queryAwardRuleWeight(strategyId);
+    }
+
+    @Override
+    public List<RuleWeightVO> queryAwardRuleWeightByActivityId(Long activityId) {
+        Long strategyId=iStrategyRespository.queryStrategyIdByActivity(activityId);
+        return queryAwardRuleWeight(strategyId);
     }
 }

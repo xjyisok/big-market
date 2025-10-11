@@ -27,7 +27,7 @@ public class RuleWeightLogicFilter implements ILogicFilter<RuleActionEntity.Raff
     @Resource
     private IStrategyRespository repository;
 
-    public Long userScore = 4500L;
+    //public Long userScore = 4500L;
 
     /**
      * 权重规则过滤；
@@ -61,6 +61,7 @@ public class RuleWeightLogicFilter implements ILogicFilter<RuleActionEntity.Raff
         Collections.sort(analyticalSortedKeys,Collections.reverseOrder());
         //{4000,5000,6000}
         // 3. 找出最小符合的值，也就是【4500 积分，能找到 4000:102,103,104,105】、【5000 积分，能找到 5000:102,103,104,105,106,107】
+        Integer userScore =repository.queryActivityAccountTotalUsedCount(userId,strategyId);
         Long nextValue = analyticalSortedKeys.stream()
                 .filter(key -> key<=userScore)
                 .findFirst()
