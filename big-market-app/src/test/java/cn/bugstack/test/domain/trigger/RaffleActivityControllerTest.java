@@ -60,7 +60,7 @@ public class RaffleActivityControllerTest {
     public void test_queryUserActivityAccount() {
         UserActivityAccountRequestDTO request = new UserActivityAccountRequestDTO();
         request.setActivityId(100301L);
-        request.setUserId("xiaofuge1");
+        request.setUserId("xiaofuge");
 
         // 查询数据
         Response<UserActivityAccountResponseDTO> response = raffleActivityService.queryUserActivityAccount(request);
