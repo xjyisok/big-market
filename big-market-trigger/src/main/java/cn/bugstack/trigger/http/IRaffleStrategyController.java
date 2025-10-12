@@ -95,7 +95,7 @@ public class IRaffleStrategyController implements IRaffleStrategyService {
     }
     @RequestMapping(value = "strategy_armory",method= RequestMethod.GET)
     @Override
-    public Response<Boolean> strategyArmory(Long strategyId) {
+    public Response<Boolean> strategyArmory(@RequestParam Long strategyId) {
         try {
             log.info("抽奖策略装配开始 strategyId:{}", strategyId);
             boolean armorystatus=strategyArmory.assembleLotteryStrategy(strategyId);
@@ -117,7 +117,7 @@ public class IRaffleStrategyController implements IRaffleStrategyService {
     }
     @RequestMapping(value = "query_raffle_strategy_rule_weight", method = RequestMethod.POST)
     @Override
-    public Response<List<RaffleStrategyRuleWeightResponseDTO>> queryRaffleStrategyRuleWeight(RaffleStrategyRuleWeightRequestDTO request) {
+    public Response<List<RaffleStrategyRuleWeightResponseDTO>> queryRaffleStrategyRuleWeight(@RequestBody RaffleStrategyRuleWeightRequestDTO request) {
         try {
             log.info("查询抽奖策略权重规则配置开始 userId:{} activityId：{}", request.getUserId(), request.getActivityId());
             // 1. 参数校验
