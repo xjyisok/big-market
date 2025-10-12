@@ -103,6 +103,7 @@ public class IRaffleActivityController implements IRaffleActivityService {
                     .activityId(userRaffleOrderEntity.getActivityId())
                     .strategyId(userRaffleOrderEntity.getStrategyId())
                     .orderId(userRaffleOrderEntity.getOrderId())
+                    .awardConfig(raffleAwardEntity.getAwardConfig())
                     .awardId(raffleAwardEntity.getAwardId())
                     .awardTitle(raffleAwardEntity.getAwardTitle())
                     .awardTime(new Date())
