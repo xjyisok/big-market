@@ -34,6 +34,8 @@ public class BlackListLogicChain extends AbstractLogicChain {
                 return DefaultLogicChainFactory.StrategyAwardVO.builder()
                         .awardId(awardId)
                         .logicModel(getruleModel())
+                        //TODO数据库读取
+                        .awardRuleValue("0.01,1")
                         .build();
             }
         }

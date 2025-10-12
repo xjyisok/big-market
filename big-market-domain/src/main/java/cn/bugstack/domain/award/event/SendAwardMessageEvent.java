@@ -23,10 +23,16 @@ public class SendAwardMessageEvent extends BaseEvent<SendAwardMessageEvent.SendA
          * 用户Id
          */
         private String userId;
+        /*
+        單號
+         */
+        private String orderId;
         //奖品Id
         private Integer awardId;
         //奖品名称
         private String awardTitle;
+        //獎品配置
+        private String awardConfig;
     }
 
     @Override

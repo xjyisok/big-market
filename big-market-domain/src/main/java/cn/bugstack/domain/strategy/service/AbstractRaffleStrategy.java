@@ -49,7 +49,7 @@ public abstract class AbstractRaffleStrategy implements IRaffleStrategy,IRaffleS
 //            return RaffleAwardEntity.builder()
 //                    .awardId(chainStrategyAward.getAwardId())
 //                    .build();
-            return buildRaffleAwardEntity(strategyId,chainStrategyAward.getAwardId(),null);
+            return buildRaffleAwardEntity(strategyId,chainStrategyAward.getAwardId(),chainStrategyAward.getAwardRuleValue());
         }
 
         //Integer awardId=logicChainFactory.openLogicChain(strategyId).logic(userId,strategyId);

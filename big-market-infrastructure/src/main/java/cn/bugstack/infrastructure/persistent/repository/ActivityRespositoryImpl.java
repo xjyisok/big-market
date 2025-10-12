@@ -20,6 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.time.DateUtils;
 import org.redisson.api.RBlockingQueue;
 import org.redisson.api.RDelayedQueue;
+import org.redisson.api.RLock;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -112,7 +113,9 @@ public class ActivityRespositoryImpl implements IActivityRespository {
     }
 
     public void doSaveOrder(CreateQuotaOrderAggregate createOrderAggregate) {
+        RLock lock = redisService.getLock(Constants.RedisKey.ACTIVITY_ACCOUNT_LOCK + createOrderAggregate.getUserId() + Constants.UNDERLINE + createOrderAggregate.getActivityId());
         try {
+            lock.lock(3, TimeUnit.SECONDS);
             // 订单对象
             ActivityOrderEntity activityOrderEntity = createOrderAggregate.getActivityOrderEntity();
             RaffleActivityOrder raffleActivityOrder = new RaffleActivityOrder();
@@ -201,6 +204,7 @@ public class ActivityRespositoryImpl implements IActivityRespository {
             });
         } finally {
             dbRouter.clear();
+            lock.unlock();
         }
     }
 

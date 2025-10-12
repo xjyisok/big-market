@@ -52,6 +52,10 @@ public class DefaultLogicChainFactory {
     public static class StrategyAwardVO{
         private Integer awardId;
         private String logicModel;
+        /*
+        抽奖奖品规则
+         */
+        private String awardRuleValue;
     }
     /**
      * 抽奖计算，责任链抽象方法
