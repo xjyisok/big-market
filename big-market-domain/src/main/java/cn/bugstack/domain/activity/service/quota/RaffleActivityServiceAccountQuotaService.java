@@ -6,17 +6,20 @@ import cn.bugstack.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 import cn.bugstack.domain.activity.model.valobj.OrderStateVO;
 import cn.bugstack.domain.activity.respository.IActivityRespository;
 import cn.bugstack.domain.activity.service.IRaffleActivitySkuStockService;
+import cn.bugstack.domain.activity.service.quota.policy.ITradePolicy;
 import cn.bugstack.domain.activity.service.quota.rule.factory.DefaultActivityChainFactory;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.Map;
 
 @Service
 public class RaffleActivityServiceAccountQuotaService extends AbstractRaffleActivityQuotaAccount implements IRaffleActivitySkuStockService {
 
-    public RaffleActivityServiceAccountQuotaService(IActivityRespository activityRepository, DefaultActivityChainFactory defaultActivityChainFactory) {
-        super(activityRepository, defaultActivityChainFactory);
+
+    public RaffleActivityServiceAccountQuotaService(IActivityRespository activityRepository, DefaultActivityChainFactory defaultActivityChainFactory, Map<String, ITradePolicy> tradePolicyService) {
+        super(activityRepository, defaultActivityChainFactory, tradePolicyService);
     }
 
     @Override
@@ -33,7 +36,8 @@ public class RaffleActivityServiceAccountQuotaService extends AbstractRaffleActi
         activityOrderEntity.setTotalCount(activityCountEntity.getTotalCount());
         activityOrderEntity.setMonthCount(activityCountEntity.getMonthCount());
         activityOrderEntity.setDayCount(activityCountEntity.getDayCount());
-        activityOrderEntity.setState(OrderStateVO.complete);
+        activityOrderEntity.setPayAmount(activitySkuEntity.getProductAmount());
+        //activityOrderEntity.setState(OrderStateVO.complete);
         activityOrderEntity.setOutBusinessNo(skuRechargeEntity.getOutBusinessNo());
 
         return CreateQuotaOrderAggregate.builder()
@@ -45,12 +49,6 @@ public class RaffleActivityServiceAccountQuotaService extends AbstractRaffleActi
                 .activityOrderEntity(activityOrderEntity)
                 .build();
     }
-
-    @Override
-    protected void doSaveOrder(CreateQuotaOrderAggregate createOrderAggregate) {
-        activityRepository.doSaveOrder(createOrderAggregate);
-    }
-
     @Override
     public ActivitySkuStockKeyVO takeQueueValue(Long sku) throws InterruptedException {
         return activityRepository.takeQueueValue(sku);
@@ -79,5 +77,10 @@ public class RaffleActivityServiceAccountQuotaService extends AbstractRaffleActi
     @Override
     public Integer queryRaffleActivityAccountPartakeCount(Long activityId, String userId) {
         return activityRepository.queryRaffleActivityAccountPartakeCount(activityId, userId);
+    }
+
+    @Override
+    public void updateOrder(DeliveryOrderEntity deliveryOrderEntity) {
+        activityRepository.updateOrder(deliveryOrderEntity);
     }
 }

@@ -9,7 +9,7 @@
         <result column="update_time" property="updateTime"/>
     </resultMap>
     <select id="queryRaffleActivitySku" parameterType="java.lang.Long" resultType="cn.bugstack.infrastructure.persistent.po.RaffleActivitySku">
-        select sku,activity_id,activity_count_id,stock_count,stock_count_surplus
+        select sku,activity_id,activity_count_id,stock_count,stock_count_surplus,product_amount
         from raffle_activity_sku
         where sku=#{sku}
     </select>
@@ -26,7 +26,7 @@
     </update>
 
     <select id="queryActivitySkuListByActivityId" parameterType="java.lang.Long" resultMap="dataMap">
-        select sku, activity_count_id, stock_count, stock_count_surplus from raffle_activity_sku where activity_id = #{activityId}
+        select sku, activity_count_id, stock_count, stock_count_surplus,product_amount from raffle_activity_sku where activity_id = #{activityId}
     </select>
 
 

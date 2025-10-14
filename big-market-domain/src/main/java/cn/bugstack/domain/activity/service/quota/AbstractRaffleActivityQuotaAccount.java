@@ -4,6 +4,7 @@ import cn.bugstack.domain.activity.model.aggerate.CreateQuotaOrderAggregate;
 import cn.bugstack.domain.activity.model.entity.*;
 import cn.bugstack.domain.activity.respository.IActivityRespository;
 import cn.bugstack.domain.activity.service.IRaffleOrderAccountQuoat;
+import cn.bugstack.domain.activity.service.quota.policy.ITradePolicy;
 import cn.bugstack.domain.activity.service.quota.rule.IActionChain;
 import cn.bugstack.domain.activity.service.quota.rule.factory.DefaultActivityChainFactory;
 import cn.bugstack.types.enums.ResponseCode;
@@ -13,6 +14,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author Fuzhengwei bugstack.cn @小傅哥
  * @description 抽奖活动抽象类，定义标准的流程
@@ -21,10 +25,12 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public abstract class AbstractRaffleActivityQuotaAccount extends RaffleActivityAccountQuotaSupport implements IRaffleOrderAccountQuoat {
-
-
-    public AbstractRaffleActivityQuotaAccount(IActivityRespository activityRepository, DefaultActivityChainFactory defaultActivityChainFactory) {
+    private final Map<String, ITradePolicy>tradePolicyService;
+    public AbstractRaffleActivityQuotaAccount(IActivityRespository activityRepository,
+                                              DefaultActivityChainFactory defaultActivityChainFactory,
+    Map<String,ITradePolicy>tradePolicyService) {
         super(activityRepository, defaultActivityChainFactory);
+        this.tradePolicyService = tradePolicyService;
     }
 
     @Override
@@ -64,12 +70,14 @@ public abstract class AbstractRaffleActivityQuotaAccount extends RaffleActivityA
         CreateQuotaOrderAggregate createOrderAggregate = builderOrderAggerate(skuRechargeEntity,
                 activitySkuEntity,activityEntity,activityCountEntity);
         //保存订单
-        doSaveOrder(createOrderAggregate);
+        ITradePolicy tradePolicy = tradePolicyService.get(skuRechargeEntity.getOrderTradeType().getCode());
+        tradePolicy.trade(createOrderAggregate);
+        //doSaveOrder(createOrderAggregate);
         return createOrderAggregate.getActivityOrderEntity().getOrderId();
     }
 
     protected abstract CreateQuotaOrderAggregate builderOrderAggerate(SkuRechargeEntity skuRechargeEntity,
                                                                       ActivitySkuEntity activitySkuEntity,
                                                                       ActivityEntity activityEntity, ActivityCountEntity activityCountEntity);
-    protected abstract void doSaveOrder(CreateQuotaOrderAggregate createOrderAggregate);
+    //protected abstract void doSaveOrder(CreateQuotaOrderAggregate createOrderAggregate);
 }

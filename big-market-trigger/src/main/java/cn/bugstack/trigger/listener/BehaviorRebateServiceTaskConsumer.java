@@ -1,5 +1,6 @@
 package cn.bugstack.trigger.listener;
 import cn.bugstack.domain.activity.model.entity.SkuRechargeEntity;
+import cn.bugstack.domain.activity.model.valobj.OrderTradeTypeVO;
 import cn.bugstack.domain.activity.service.IRaffleOrderAccountQuoat;
 import cn.bugstack.domain.credit.model.entity.TradeEntity;
 import cn.bugstack.domain.credit.model.valobj.TradeNameVO;
@@ -45,6 +46,7 @@ public class BehaviorRebateServiceTaskConsumer {
                     skuRechargeEntity.setUserId(sendRebateMessage.getUserId());
                     skuRechargeEntity.setSku(Long.valueOf(sendRebateMessage.getRebateConfig()));
                     skuRechargeEntity.setOutBusinessNo(sendRebateMessage.getBizId());
+                    skuRechargeEntity.setOrderTradeType(OrderTradeTypeVO.rebate_no_pay_trade);
                     iRaffleOrderAccountQuoat.createSkuRechargeOrder(skuRechargeEntity);
                     break;
                 case "integral":

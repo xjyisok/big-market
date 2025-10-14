@@ -14,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.util.concurrent.CountDownLatch;
 
 @Slf4j
 @RunWith(SpringRunner.class)
@@ -31,4 +32,17 @@ public class CreditAdjustServiceTest {
         trade.setOutBusinessNo("100000000000");
         creditAdjustService.createOrder(trade);
     }
+    @Test
+    public void test_createOrder_pay() throws InterruptedException {
+        TradeEntity tradeEntity = new TradeEntity();
+        tradeEntity.setUserId("xiaofuge");
+        tradeEntity.setTradeName(TradeNameVO.CONVERT_SKU);
+        tradeEntity.setTradeType(TradeTypeVO.REVERSE);
+        tradeEntity.setAmount(new BigDecimal("-1.68"));
+        tradeEntity.setOutBusinessNo("70009240614001");
+        creditAdjustService.createOrder(tradeEntity);
+
+        new CountDownLatch(1).await();
+    }
+
 }
