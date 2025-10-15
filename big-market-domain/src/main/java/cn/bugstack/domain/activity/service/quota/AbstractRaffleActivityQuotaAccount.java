@@ -10,6 +10,7 @@ import cn.bugstack.domain.activity.service.quota.rule.factory.DefaultActivityCha
 import cn.bugstack.types.enums.ResponseCode;
 import cn.bugstack.types.exception.AppException;
 import com.alibaba.fastjson.JSON;
+import com.sun.org.apache.xpath.internal.axes.UnionPathIterator;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
@@ -48,13 +49,18 @@ public abstract class AbstractRaffleActivityQuotaAccount extends RaffleActivityA
     }
 
     @Override
-    public String createSkuRechargeOrder(SkuRechargeEntity skuRechargeEntity) {
+    public UnpaidActivityOrderEntity createSkuRechargeOrder(SkuRechargeEntity skuRechargeEntity) {
         //1参数校验
         String userId=skuRechargeEntity.getUserId();
         Long sku=skuRechargeEntity.getSku();
         String outbusinessNo=skuRechargeEntity.getOutBusinessNo();
         if(sku==null|| StringUtils.isEmpty(outbusinessNo)||StringUtils.isEmpty(userId)){
             throw new AppException(ResponseCode.ILLEGAL_PARAMETER.getCode(),ResponseCode.ILLEGAL_PARAMETER.getInfo());
+        }
+        // 2. 查询未支付订单「一个月以内的未支付订单」
+        UnpaidActivityOrderEntity unpaidCreditOrder =  activityRepository.queryUnpaidActivityOrder(skuRechargeEntity);
+        if(unpaidCreditOrder!=null){
+            return unpaidCreditOrder;
         }
         //查询基础信息
         //查询sku活动信息
@@ -73,7 +79,14 @@ public abstract class AbstractRaffleActivityQuotaAccount extends RaffleActivityA
         ITradePolicy tradePolicy = tradePolicyService.get(skuRechargeEntity.getOrderTradeType().getCode());
         tradePolicy.trade(createOrderAggregate);
         //doSaveOrder(createOrderAggregate);
-        return createOrderAggregate.getActivityOrderEntity().getOrderId();
+        //return createOrderAggregate.getActivityOrderEntity().getOrderId();
+        ActivityOrderEntity activityOrderEntity = createOrderAggregate.getActivityOrderEntity();
+        return UnpaidActivityOrderEntity.builder()
+                .userId(userId)
+                .orderId(activityOrderEntity.getOrderId())
+                .outBusinessNo(activityOrderEntity.getOutBusinessNo())
+                .payAmount(activityOrderEntity.getPayAmount())
+                .build();
     }
 
     protected abstract CreateQuotaOrderAggregate builderOrderAggerate(SkuRechargeEntity skuRechargeEntity,

@@ -61,4 +61,8 @@ public interface IActivityRespository {
     void doSaveOrder(CreateQuotaOrderAggregate createOrderAggregate);
 
     void updateOrder(DeliveryOrderEntity deliveryOrderEntity);
+
+    UnpaidActivityOrderEntity queryUnpaidActivityOrder(SkuRechargeEntity skuRechargeEntity);
+
+    List<SkuProductEntity> querySkuProductEntityListByActivityId(Long activityId);
 }

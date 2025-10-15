@@ -13,4 +13,5 @@ public interface IRaffleStrategyService {
     Response<List<RaffleAwardListResponseDTO>> queryRaffleAwardList(RaffleAwardListRequestDTO req);
     Response<RaffleStrategyResponseDTO>randomeRaffle(RaffleStrategyRequestDTO req);
     public Response<List<RaffleStrategyRuleWeightResponseDTO>> queryRaffleStrategyRuleWeight(RaffleStrategyRuleWeightRequestDTO request);
+
 }
