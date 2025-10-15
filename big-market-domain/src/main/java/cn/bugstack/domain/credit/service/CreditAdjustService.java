@@ -54,4 +54,9 @@ public class CreditAdjustService implements ICreditAdjustService {
         creditRepository.saveUserCreditTradeOrder(tradeAggregate);
         return null;
     }
+
+    @Override
+    public CreditAccountEntity queryUserCreditAccount(String userId) {
+        return creditRepository.queryUserCreditAccount(userId);
+    }
 }

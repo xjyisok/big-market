@@ -15,6 +15,8 @@ import cn.bugstack.infrastructure.persistent.po.UserCreditOrder;
 import cn.bugstack.infrastructure.persistent.redis.IRedisService;
 import cn.bugstack.middleware.db.router.strategy.IDBRouterStrategy;
 import cn.bugstack.types.common.Constants;
+import cn.bugstack.types.enums.ResponseCode;
+import cn.bugstack.types.exception.AppException;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
@@ -24,6 +26,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 
 @Repository
@@ -80,9 +83,19 @@ public class CreditRepositoryImpl implements ICreditRepository {
                     if(usercreditAccountRes==null){
                         userCreditAccountDao.insert(userCreditAccount);
                     }else {
-                        userCreditAccountDao.updateAddAmount(userCreditAccount);
+                        BigDecimal availableAmount = userCreditAccount.getAvailableAmount();
+                        if (availableAmount.compareTo(BigDecimal.ZERO) >= 0) {
+                            userCreditAccountDao.updateAddAmount(userCreditAccount);
+                        } else {
+                            int subtractionCount = userCreditAccountDao.updateSubtractionAmount(userCreditAccount);
+                            if (1 != subtractionCount) {
+                                status.setRollbackOnly();
+                                throw new AppException(ResponseCode.USER_CREDIT_ACCOUNT_NO_AVAILABLE_AMOUNT.getCode(), ResponseCode.USER_CREDIT_ACCOUNT_NO_AVAILABLE_AMOUNT.getInfo());
+                            }
+                        }
                     }
                     userCreditOrderDao.insert(userCreditOrder);
+                    taskDao.insert(task);
                 } catch (DuplicateKeyException e) {
                     status.setRollbackOnly();
                     log.error("调整账户积分额度异常，唯一索引冲突userId:{} orderId:{}", userId, creditOrderEntity.getOrderId());
@@ -106,6 +119,25 @@ public class CreditRepositoryImpl implements ICreditRepository {
         } catch (Exception e) {
             log.error("调整账户积分记录，发送MQ消息失败 userId: {} topic: {}", userId, task.getTopic());
             taskDao.updateTaskSendMessageFail(task);
+        }
+
+    }
+
+    @Override
+    public CreditAccountEntity queryUserCreditAccount(String userId) {
+        UserCreditAccount userCreditAccountReq = new UserCreditAccount();
+        userCreditAccountReq.setUserId(userId);
+        try {
+            dbRouter.doRouter(userId);
+            UserCreditAccount userCreditAccount = userCreditAccountDao.queryUserCreditAccount(userCreditAccountReq);
+            BigDecimal availableAmount = BigDecimal.ZERO;
+            if (null != userCreditAccount) {
+                availableAmount = userCreditAccount.getAvailableAmount();
+            }
+
+            return CreditAccountEntity.builder().userId(userId).adjustAmount(availableAmount).build();
+        } finally {
+            dbRouter.clear();
         }
 
 

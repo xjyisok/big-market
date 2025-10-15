@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 
-@Service("rebate_no_trade")
+@Service("rebate_no_pay_trade")
 public class RebateNoPayTradePolicy implements ITradePolicy {
     @Resource
     private  IActivityRespository activityRespository;
