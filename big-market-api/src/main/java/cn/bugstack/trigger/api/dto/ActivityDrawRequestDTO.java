@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @author Fuzhengwei bugstack.cn @小傅哥
  * @description 活动抽奖请求对象
@@ -12,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ActivityDrawRequestDTO {
+public class ActivityDrawRequestDTO implements Serializable {
 
     /**
      * 用户ID
