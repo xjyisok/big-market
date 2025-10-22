@@ -1,8 +1,6 @@
-# 命令执行 docker-compose -f docker-compose-environment.yml up -d
 version: '3.9'
 services:
-  # 注册中心 https://github.com/nacos-group/nacos-docker - 其他配置可参考(集群)
-  # http://127.0.0.1:8848/nacos 【账号：nacos 密码：nacos】
+  # 注册中心 Nacos
   nacos:
     image: nacos/nacos-server:v2.2.3-slim
     container_name: nacos
@@ -29,42 +27,31 @@ services:
       mysql:
         condition: service_healthy
 
-
+  # MySQL 数据库
   mysql:
-    #image: registry.cn-hangzhou.aliyuncs.com/dockerhub-mirror/mysql:8.0.32
     image: mysql:8.0.32
     container_name: mysql
-    command: --default-authentication-plugin=mysql_native_password
+    command: --default-authentication-plugin=mysql_native_password --skip-name-resolve
     restart: always
     environment:
       TZ: Asia/Shanghai
       MYSQL_ROOT_PASSWORD: 123456
     networks:
       - my-network
-    depends_on:
-      - mysql-job-dbdata
     ports:
       - "3306:3306"
     volumes:
       - ./mysql/sql:/docker-entrypoint-initdb.d
+      #- ./mysql/my.cnf:/etc/mysql/conf.d/mysql.cnf:ro
+      - mysql_data:/var/lib/mysql
     healthcheck:
-      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p123456"]
       interval: 5s
       timeout: 10s
       retries: 10
-      start_period: 15s
-    volumes_from:
-      - mysql-job-dbdata
+      start_period: 900s
 
-  # 自动加载数据
-  mysql-job-dbdata:
-    #image: registry.cn-hangzhou.aliyuncs.com/dockerhub-mirror/alpine:3.18.2
-    image: alpine:3.18.2
-    container_name: mysql-job-dbdata
-    volumes:
-      - /var/lib/mysql
-
-  # phpmyadmin https://hub.docker.com/_/phpmyadmin
+  # PHPMyAdmin
   phpmyadmin:
     image: phpmyadmin:5.2.0
     container_name: phpmyadmin
@@ -96,12 +83,12 @@ services:
     networks:
       - my-network
     healthcheck:
-      test: [ "CMD", "redis-cli", "ping" ]
+      test: ["CMD", "redis-cli", "ping"]
       interval: 10s
       timeout: 5s
       retries: 3
 
-  # RedisAdmin https://github.com/joeferner/redis-commander
+  # RedisAdmin
   redis-admin:
     image: spryker/redis-commander:0.8.0
     container_name: redis-admin
@@ -121,6 +108,8 @@ services:
     depends_on:
       redis:
         condition: service_healthy
+
+  # RabbitMQ
   rabbitmq:
     image: rabbitmq:3.12.9
     container_name: rabbitmq
@@ -134,6 +123,8 @@ services:
     command: rabbitmq-server
     volumes:
       - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
+
+  # Zookeeper
   zookeeper:
     image: zookeeper:3.9.3
     container_name: zookeeper
@@ -147,6 +138,72 @@ services:
     networks:
       - my-network
 
+  # Canal-server
+  canal-server:
+    image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/canal-server:v1.1.7
+    container_name: canal-server
+    restart: unless-stopped
+    ports:
+      - "11111:11111"
+    volumes:
+      - ./canal/instance.properties:/home/admin/canal-server/conf/example/instance.properties
+    depends_on:
+      - mysql
+    networks:
+      - my-network
+
+  # Canal-adapter
+  canal-adapter:
+    image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/canal-adapter:v1.1.6
+    container_name: canal-adapter
+    restart: unless-stopped
+    ports:
+      - "8082:8081"
+    volumes:
+      - ./canal-adapter/application.yml:/opt/canal-adapter/conf/application.yml
+      - ./canal-adapter/es7:/opt/canal-adapter/conf/es7
+    depends_on:
+      - canal-server
+    networks:
+      - my-network
+
+  # Elasticsearch
+  elasticsearch:
+    image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/elasticsearch:7.17.14
+    container_name: elasticsearch
+    restart: always
+    ports:
+      - '9200:9200'
+      - '9300:9300'
+    environment:
+      - 'cluster.name=docker-cluster'
+      - 'discovery.type=single-node'
+      - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
+    networks:
+      - my-network
+
+  # Kibana
+  kibana:
+    image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/kibana:7.17.14
+    container_name: kibana
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    ports:
+      - '5601:5601'
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - 'elasticsearch.hosts=http://elasticsearch:9200'
+      - I18N_LOCALE=zh-CN
+    networks:
+      - my-network
+    depends_on:
+      - elasticsearch
+
 networks:
   my-network:
     driver: bridge
+
+volumes:
+  mysql_data:

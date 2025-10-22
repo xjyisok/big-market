@@ -1,0 +1,47 @@
+server:
+  port: 8081
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+#  datasource:
+#    url: jdbc:mysql://mysql:3306/canal_manager?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+#    username: canal
+#    password: canal
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    initialization-mode: always
+
+canal.conf:
+  mode: tcp
+  flatMessage: true
+  syncBatchSize: 1000
+  retries: -1
+
+  # 需要同步的数据库配置
+  src-data-sources:   # ✅ 注意这里改成 src-data-sources
+    big_market_01:
+      url: jdbc:mysql://mysql:3306/big_market_01?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: canal
+      password: canal
+    big_market_02:
+      url: jdbc:mysql://mysql:3306/big_market_02?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: canal
+      password: canal
+
+  canalAdapters:
+    - instance: example
+      groups:
+        - groupId: g1
+          outerAdapters:
+            - name: logger
+            - name: es7
+              hosts: elasticsearch:9200
+              properties:
+                mode: rest
+                cluster.name: docker-cluster
+
+  # Canal TCP 配置
+  consumerProperties:
+    canal.tcp.server.host: canal-server:11111
