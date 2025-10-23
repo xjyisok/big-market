@@ -31,7 +31,7 @@ services:
   mysql:
     image: mysql:8.0.32
     container_name: mysql
-    command: --default-authentication-plugin=mysql_native_password --skip-name-resolve
+    command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       TZ: Asia/Shanghai
@@ -45,7 +45,7 @@ services:
       #- ./mysql/my.cnf:/etc/mysql/conf.d/mysql.cnf:ro
       - mysql_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p123456"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s
       timeout: 10s
       retries: 10
@@ -140,7 +140,7 @@ services:
 
   # Canal-server
   canal-server:
-    image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/canal-server:v1.1.7
+    image: canal/canal-server:v1.1.7
     container_name: canal-server
     restart: unless-stopped
     ports:
@@ -154,7 +154,7 @@ services:
 
   # Canal-adapter
   canal-adapter:
-    image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/canal-adapter:v1.1.6
+    image: coopersoft/canal-adapter:v1.1.6
     container_name: canal-adapter
     restart: unless-stopped
     ports:
@@ -163,13 +163,13 @@ services:
       - ./canal-adapter/application.yml:/opt/canal-adapter/conf/application.yml
       - ./canal-adapter/es7:/opt/canal-adapter/conf/es7
     depends_on:
-      - canal-server
+      - mysql
     networks:
       - my-network
 
   # Elasticsearch
   elasticsearch:
-    image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/elasticsearch:7.17.14
+    image: elasticsearch:7.17.14
     container_name: elasticsearch
     restart: always
     ports:
@@ -184,7 +184,7 @@ services:
 
   # Kibana
   kibana:
-    image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/kibana:7.17.14
+    image: kibana:7.17.14
     container_name: kibana
     restart: always
     volumes:
