@@ -1,15 +1,13 @@
 package cn.bugstack.test.infrastructure;
 
-import cn.bugstack.infrastructure.persistent.dao.IAwardDao;
-import cn.bugstack.infrastructure.persistent.po.Award;
+import cn.bugstack.infrastructure.dao.IAwardDao;
+import cn.bugstack.infrastructure.dao.po.Award;
 import lombok.extern.slf4j.Slf4j;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 

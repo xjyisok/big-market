@@ -99,9 +99,9 @@
             <artifactId>big-market-infrastructure</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.bugstack.middleware</groupId>
+            <groupId>plus.gaga.middleware</groupId>
             <artifactId>db-router-spring-boot-starter</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.jeasy</groupId>
@@ -136,7 +136,7 @@
 
         <dependency>
             <groupId>org.elasticsearch.plugin</groupId>
-            <artifactId>lang-mustache-client</artifactId>
+            <artifactId>x-pack-sql-jdbc</artifactId>
         </dependency>
     </dependencies>
 
