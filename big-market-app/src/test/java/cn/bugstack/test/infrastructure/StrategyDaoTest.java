@@ -1,9 +1,7 @@
 package cn.bugstack.test.infrastructure;
 
-import cn.bugstack.infrastructure.persistent.dao.IAwardDao;
-import cn.bugstack.infrastructure.persistent.dao.IStrategyDao;
-import cn.bugstack.infrastructure.persistent.po.Award;
-import cn.bugstack.infrastructure.persistent.po.Strategy;
+import cn.bugstack.infrastructure.dao.IStrategyDao;
+import cn.bugstack.infrastructure.dao.po.Strategy;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

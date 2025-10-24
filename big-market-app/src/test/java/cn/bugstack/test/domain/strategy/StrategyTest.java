@@ -3,7 +3,7 @@ package cn.bugstack.test.domain.strategy;
 import cn.bugstack.domain.strategy.service.armory.IStrategyArmory;
 import cn.bugstack.domain.strategy.service.armory.IStrategyDisPatch;
 
-import cn.bugstack.infrastructure.persistent.redis.IRedisService;
+import cn.bugstack.infrastructure.redis.IRedisService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;

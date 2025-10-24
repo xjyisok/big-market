@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.bugstack.infrastructure.dao.IStrategyAwardDao">
+
+    <resultMap id="dataMap" type="cn.bugstack.infrastructure.dao.po.StrategyAward">
+        <id column="id" property="id"/>
+<!--        <result column="create_time" property="createTime"/>-->
+<!--        <result column="update_time" property="updateTime"/>-->
+<!--        已经开启驼峰命名不需要了-->
+    </resultMap>
+
+<!--    <insert id="insert" parameterType="cn.bugstack.infrastructure.persistent.po.Award">-->
+<!--        INSERT INTO table(a,b,c) VALUES(#{a}, #{b}, #{c})-->
+<!--    </insert>-->
+
+<!--    <update id="update" parameterType="cn.bugstack.infrastructure.persistent.po.Award">-->
+<!--        UPDATE table SET a = #{a} WHERE b = #{b}-->
+<!--    </update>-->
+
+    <select id="queryStrategyAwardList" resultMap="dataMap">
+        select strategy_id
+        from big_market.strategy_award
+        limit 10
+    </select>
+    <select id="queryStrategyAwardListById" parameterType="java.lang.Long" resultMap="dataMap">
+        select strategy_id,award_id,award_title,award_subtitle,sort,award_count,award_count_surplus,award_rate,rule_models
+        from big_market.strategy_award
+        where strategy_id=#{strategyId}
+    </select>
+    <update id="updateStrategyAwardStock" parameterType="cn.bugstack.infrastructure.dao.po.StrategyAward">
+        update big_market.strategy_award
+        set award_count_surplus = award_count_surplus - 1
+        where strategy_id = #{strategyId} and award_id = #{awardId} and award_count_surplus > 0
+
+    </update>
+    <select id="queryStrategyAward" parameterType="cn.bugstack.infrastructure.dao.po.StrategyAward" resultMap="dataMap">
+        select strategy_id,award_id,award_title,award_subtitle,sort,award_count,award_count_surplus,award_rate,rule_models
+        from big_market.strategy_award
+        where strategy_id=#{strategyId} and award_id=#{awardId}
+    </select>
+
+</mapper>
