@@ -3,6 +3,7 @@ package cn.bugstack.domain.activity.service.armory;
 import cn.bugstack.domain.activity.model.entity.ActivitySkuEntity;
 import cn.bugstack.domain.activity.respository.IActivityRespository;
 import cn.bugstack.types.common.Constants;
+import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -36,7 +37,11 @@ public class ActivityArmory implements IActivityArmory, IActivityDispatch {
     @Override
     public boolean assembleActivitySkuByActivityId(Long activityId) {
         List<ActivitySkuEntity>activitySkuEntities=activityRespository.queryActivitySkuByActivityId(activityId);
+//        System.out.println(activitySkuEntities.size());
+//        for(ActivitySkuEntity activitySkuEntity:activitySkuEntities){
+//            System.out.println(JSON.toJSONString(activitySkuEntity));}
         for(ActivitySkuEntity activitySkuEntity:activitySkuEntities){
+            //System.out.println(activitySkuEntity.getActivityId()+":"+activitySkuEntity.getStockCountSurplus());
             cacheActivitySkuStockCount(activitySkuEntity.getSku(),activitySkuEntity.getStockCountSurplus());
             activityRespository.queryRaffleActivityCountByActivityCountId(activitySkuEntity.getActivityCountId());
         }

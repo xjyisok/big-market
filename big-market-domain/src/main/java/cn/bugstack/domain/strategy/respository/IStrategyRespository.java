@@ -36,6 +36,7 @@ public interface IStrategyRespository {
 
     StrategyAwardStockModelVO takeQueueValue();
 
+    StrategyAwardStockModelVO takeQueueValue(Long strategyId, Integer awardId);
     void updateStrategyAwardStock(Long strategyId, Integer awardId);
 
     StrategyAwardEntity queryStrategyAwardEntity(Long strategyId,Integer awardId);
@@ -49,4 +50,6 @@ public interface IStrategyRespository {
     Integer queryActivityAccountTotalUsedCount(String userId, Long strategyId);
 
     List<RuleWeightVO> queryAwardRuleWeight(Long strategyId);
+
+    List<StrategyAwardStockModelVO> queryStrategyAwardStockModelList();
 }

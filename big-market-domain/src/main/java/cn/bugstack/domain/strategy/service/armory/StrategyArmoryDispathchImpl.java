@@ -7,6 +7,7 @@ import cn.bugstack.domain.strategy.respository.IStrategyRespository;
 import cn.bugstack.types.common.Constants;
 import cn.bugstack.types.enums.ResponseCode;
 import cn.bugstack.types.exception.AppException;
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.omg.CORBA.portable.ApplicationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,9 @@ public class StrategyArmoryDispathchImpl implements IStrategyArmory, IStrategyDi
     public boolean assembleLotteryStrategy(Long strategyId) {
         //1.查询策略配置
         List<StrategyAwardEntity>strategyAwardEntityList=strategyRespository.queryStrategyAwardList(strategyId);
+        for(StrategyAwardEntity strategyAwardEntity:strategyAwardEntityList){
+            System.out.println(JSON.toJSONString(strategyAwardEntity));
+        }
         for(StrategyAwardEntity strategyAwardEntity:strategyAwardEntityList){
             Integer awardId=strategyAwardEntity.getAwardId();
             Integer awardcount=strategyAwardEntity.getAwardCount();
@@ -90,6 +94,7 @@ public class StrategyArmoryDispathchImpl implements IStrategyArmory, IStrategyDi
     }
     private void cacheStrategyAwardCount(Long strategyId,Integer awardCount,Integer awardId){
         String cachekey= Constants.RedisKey.STRATEGY_AWARD_COUNT_KEY+strategyId+Constants.UNDERLINE+awardId;
+        //System.out.println("<UNK>"+awardCount+"<UNK>");
         strategyRespository.cacheStrategyAwardCount(cachekey,awardCount);
     }
 

@@ -214,6 +214,7 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
         if(null!=redisService.getValue(key)){
             return;
         }
+        //System.out.println("<UNK>"+awardcount+"<UNK>");
         redisService.setAtomicLong(key, awardcount);
     }
 
@@ -245,7 +246,8 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
 
     @Override
     public void awardStockConsumeSendQueue(StrategyAwardStockModelVO strategyAwardStockModelVO) {
-        String cachekey=Constants.RedisKey.STRATEGY_AWARD_COUNT_QUEUE_KEY;
+        String cachekey=Constants.RedisKey.STRATEGY_AWARD_COUNT_QUEUE_KEY+Constants.UNDERLINE+
+                strategyAwardStockModelVO.getStrategyId()+Constants.UNDERLINE+strategyAwardStockModelVO.getAwardId();
         RBlockingQueue<StrategyAwardStockModelVO>blockingqueue=redisService.getBlockingQueue(cachekey);
         RDelayedQueue<StrategyAwardStockModelVO>delayedQueue=redisService.getDelayedQueue(blockingqueue);
         delayedQueue.offer(strategyAwardStockModelVO,3, TimeUnit.SECONDS);
@@ -254,6 +256,14 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
     @Override
     public StrategyAwardStockModelVO takeQueueValue() {
         String cachekey=Constants.RedisKey.STRATEGY_AWARD_COUNT_QUEUE_KEY;
+        RBlockingQueue<StrategyAwardStockModelVO>blockingqueue=redisService.getBlockingQueue(cachekey);
+        return blockingqueue.poll();
+    }
+
+    @Override
+    public StrategyAwardStockModelVO takeQueueValue(Long strategyId, Integer awardId) {
+        String cachekey=Constants.RedisKey.STRATEGY_AWARD_COUNT_QUEUE_KEY+Constants.UNDERLINE+
+                strategyId+Constants.UNDERLINE+awardId;
         RBlockingQueue<StrategyAwardStockModelVO>blockingqueue=redisService.getBlockingQueue(cachekey);
         return blockingqueue.poll();
     }
@@ -384,6 +394,24 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
         redisService.setValue(cacheKey, ruleWeightVOS);
 
         return ruleWeightVOS;
+
+    }
+
+    @Override
+    public List<StrategyAwardStockModelVO> queryStrategyAwardStockModelList() {
+        List<StrategyAward> strategyAwards = strategyAwardDao.queryOpenActivityStrategyAwardList();
+        if (null == strategyAwards || strategyAwards.isEmpty()) return null;
+
+        List<StrategyAwardStockModelVO> strategyAwardStockKeyVOS = new ArrayList<>();
+        for (StrategyAward strategyAward: strategyAwards){
+            StrategyAwardStockModelVO strategyAwardStockKeyVO = StrategyAwardStockModelVO.builder()
+                    .strategyId(strategyAward.getStrategyId())
+                    .awardId(strategyAward.getAwardId())
+                    .build();
+            strategyAwardStockKeyVOS.add(strategyAwardStockKeyVO);
+        }
+
+        return strategyAwardStockKeyVOS;
 
     }
 }
