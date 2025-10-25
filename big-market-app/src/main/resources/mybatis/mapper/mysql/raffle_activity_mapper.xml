@@ -15,7 +15,7 @@
         <result column="update_time" property="updateTime"/>
     </resultMap>
 
-    <select id="queryRaffleActivityByActivityId" parameterType="java.lang.Long" resultType="cn.bugstack.infrastructure.dao.po.RaffleActivity">
+    <select id="queryRaffleActivityByActivityId" parameterType="java.lang.Long" resultMap="dataMap">
         select activity_id, activity_name, activity_desc, begin_date_time, end_date_time, strategy_id, state
         from big_market.raffle_activity
         where activity_id = #{activityId}

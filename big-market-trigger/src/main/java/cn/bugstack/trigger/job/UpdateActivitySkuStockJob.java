@@ -3,7 +3,12 @@ package cn.bugstack.trigger.job;
 import cn.bugstack.domain.activity.model.valobj.ActivitySkuStockKeyVO;
 import cn.bugstack.domain.activity.respository.IActivityRespository;
 import cn.bugstack.domain.activity.service.IRaffleActivitySkuStockService;
+import com.xxl.job.core.handler.annotation.XxlJob;
 import lombok.extern.slf4j.Slf4j;
+import org.redisson.Redisson;
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
+import org.redisson.client.RedisClient;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -26,7 +31,8 @@ public class UpdateActivitySkuStockJob {
     @Resource
     private IActivityRespository activityRespository;
     private ExecutorService executorService;
-
+    @Resource
+    private RedissonClient redisson;
     @PostConstruct
     public void init() {
         // 核心线程数（最小线程数）
@@ -48,9 +54,16 @@ public class UpdateActivitySkuStockJob {
                 new ThreadPoolExecutor.CallerRunsPolicy() // 拒绝策略：主线程执行
         );
     }
-    @Scheduled(cron = "0/5 * * * * ?")
+    //@Scheduled(cron = "0/5 * * * * ?")
+    @XxlJob("UpdateActivitySkuStockJob")
     public void exec() {
+        RLock lock = redisson.getLock("big-market-UpdateActivitySkuStockJob");
+        boolean isLock = false;
         try {
+            isLock= lock.tryLock(3,0, TimeUnit.SECONDS);
+            if (!isLock) {
+                return;
+            }
             List<Long>skuValueOfQueue=activityRespository.scanAllSkuFromQueue();
             //log.info("定时任务，更新活动sku库存【延迟队列获取，降低对数据库的更新频次，不要产生竞争】");
             for(Long skuId:skuValueOfQueue) {
@@ -71,6 +84,9 @@ public class UpdateActivitySkuStockJob {
             }
         } catch (Exception e) {
             log.error("定时任务，更新活动sku库存失败", e);
+        }
+        finally {
+            lock.unlock();
         }
     }
 

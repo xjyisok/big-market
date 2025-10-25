@@ -13,4 +13,6 @@ public interface IStrategyAwardDao {
     List<StrategyAward> queryStrategyAwardListById(Long StrategyAwardId);
 
     StrategyAward queryStrategyAward(StrategyAward strategyAward);
+
+    List<StrategyAward> queryOpenActivityStrategyAwardList();
 }

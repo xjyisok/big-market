@@ -16,6 +16,7 @@ import cn.bugstack.middleware.db.router.strategy.IDBRouterStrategy;
 import cn.bugstack.types.common.Constants;
 import cn.bugstack.types.enums.ResponseCode;
 import cn.bugstack.types.exception.AppException;
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.time.DateUtils;
 import org.redisson.api.RBlockingQueue;
@@ -217,6 +218,7 @@ public class ActivityRespositoryImpl implements IActivityRespository {
     @Override
     public void cacheActivitySkuStockCount(String key, Integer stockCount) {
         if (redisService.isExists(key)) return;
+        System.out.println(key+":"+stockCount);
         redisService.setAtomicLong(key, stockCount);
 
     }
@@ -480,8 +482,11 @@ public class ActivityRespositoryImpl implements IActivityRespository {
     @Override
     public List<ActivitySkuEntity> queryActivitySkuByActivityId(Long activityId) {
         List<RaffleActivitySku> raffleActivitySkus = raffleActivitySkuDao.queryActivitySkuListByActivityId(activityId);
+        System.out.println(JSON.toJSONString(raffleActivitySkus));
+        System.out.println(JSON.toJSONString(raffleActivitySkus.size()));
         List<ActivitySkuEntity> activitySkuEntities = new ArrayList<>(raffleActivitySkus.size());
         for (RaffleActivitySku raffleActivitySku : raffleActivitySkus) {
+            //System.out.println(raffleActivitySku.getSku()+raffleActivitySku.getActivityCountId()+raffleActivitySku.getStockCount()+raffleActivitySku.getStockCountSurplus());
             ActivitySkuEntity activitySkuEntity = new ActivitySkuEntity();
             activitySkuEntity.setSku(raffleActivitySku.getSku());
             activitySkuEntity.setActivityCountId(raffleActivitySku.getActivityCountId());
