@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.redisson.api.RMap;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import javax.annotation.Resource;
 import java.util.*;
@@ -36,7 +37,8 @@ public class StrategyTest {
      */
     @Before
     public void test_strategyArmory() {
-        boolean success = strategyArmory.assembleLotteryStrategy(100001L);
+        ReflectionTestUtils.setField(strategyArmory, "ALGORITHM_THRESHOLD_VALUE", 10);
+        boolean success = strategyArmory.assembleLotteryStrategy(100006L);
         log.info("测试结果：{}", success);
     }
 
@@ -45,7 +47,7 @@ public class StrategyTest {
      */
     @Test
     public void test_getRandomAwardId() {
-        log.info("测试结果：{} - 奖品ID值", strategyDispatch.getRandomAwardId(100001L));
+        log.info("测试结果：{} - 奖品ID值", strategyDispatch.getRandomAwardId(100006L));
     }
 
     /**

@@ -71,10 +71,10 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
 
 
     @Override
-    public void storeStrategyAwardSearchTable(String key, BigDecimal rateRange, HashMap<Integer, Integer> strategyAwardRateMap){
+    public <K,V> void storeStrategyAwardSearchTable(String key, BigDecimal rateRange, Map<K,V> strategyAwardRateMap){
         String rangecache=Constants.RedisKey.STRATEGY_RATE_RANGE_KEY+key;
         redisService.setValue(rangecache,rateRange.intValue());
-        Map<Integer,Integer> cacheRateTable=redisService.getMap(Constants.RedisKey.STRATEGY_RATE_TABLE_KEY+key);
+        Map<K,V> cacheRateTable=redisService.getMap(Constants.RedisKey.STRATEGY_RATE_TABLE_KEY+key);
         cacheRateTable.putAll(strategyAwardRateMap);
     }
 
@@ -413,6 +413,26 @@ public class StrategyRespositoryImpl implements IStrategyRespository {
 
         return strategyAwardStockKeyVOS;
 
+    }
+
+    @Override
+    public <K, V> Map<K, V> getMap(String key) {
+        return redisService.getMap(Constants.RedisKey.STRATEGY_RATE_TABLE_KEY+key);
+    }
+
+    @Override
+    public void cacheStrategyArmoryAlgorithm(String key, String beanName) {
+        String redisKey=Constants.RedisKey.STRATEGY_ARMORY_ALGORITHM_KEY+key;
+        redisService.setValue(redisKey, beanName);
+    }
+
+    @Override
+    public String queryStrategyArmoryAlgorithm(String key) {
+        String redisKey=Constants.RedisKey.STRATEGY_ARMORY_ALGORITHM_KEY+key;
+        if(!redisService.isExists(redisKey)){
+            return null;
+        }
+        return redisService.getValue(redisKey);
     }
 }
 

@@ -16,7 +16,7 @@ import java.util.Map;
 
 public interface IStrategyRespository {
     public List<StrategyAwardEntity>queryStrategyAwardList(Long strategyId);
-    public void storeStrategyAwardSearchTable(String key, BigDecimal rateRange, HashMap<Integer, Integer> strategyAwardRateMap);
+    public <K,V> void storeStrategyAwardSearchTable(String key, BigDecimal rateRange, Map<K,V> strategyAwardRateMap);
     public Integer getRateRange(Long strategyId);
     public Integer getStrategyAwardAssemble(String key,Integer rate);
     public StrategyEntity queryStrategyEntityByStrategyId(Long strategyId);
@@ -52,4 +52,10 @@ public interface IStrategyRespository {
     List<RuleWeightVO> queryAwardRuleWeight(Long strategyId);
 
     List<StrategyAwardStockModelVO> queryStrategyAwardStockModelList();
+
+    <K,V> Map<K,V> getMap(String key);
+
+    void cacheStrategyArmoryAlgorithm(String key, String key1);
+
+    String queryStrategyArmoryAlgorithm(String key);
 }
