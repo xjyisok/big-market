@@ -66,8 +66,11 @@ public abstract class AbstractRaffleActivityQuotaAccount extends RaffleActivityA
         }
         //查询基础信息
         //查询sku活动信息
+        System.out.println(sku);
         ActivitySkuEntity activitySkuEntity = queryActivitySku(sku);
         //查询活动信息
+        System.out.println(JSON.toJSONString(activitySkuEntity));
+        System.out.println(activitySkuEntity.getActivityId()+"1");
         ActivityEntity activityEntity = queryRaffleActivityByActivityId(activitySkuEntity.getActivityId());
         //查询次数信息
         ActivityCountEntity activityCountEntity = queryRaffleActivityCountByActivityCountId(activitySkuEntity.getActivityCountId());

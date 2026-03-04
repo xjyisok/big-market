@@ -86,6 +86,8 @@ public class ActivityRespositoryImpl implements IActivityRespository {
         if (null != activityEntity) return activityEntity;
         // 从库中获取数据
         RaffleActivity raffleActivity = raffleActivityDao.queryRaffleActivityByActivityId(activityId);
+        System.out.println(activityId);
+        System.out.println(JSON.toJSONString(raffleActivity));
         activityEntity = ActivityEntity.builder()
                 .activityId(raffleActivity.getActivityId())
                 .activityName(raffleActivity.getActivityName())
@@ -226,6 +228,7 @@ public class ActivityRespositoryImpl implements IActivityRespository {
     @Override
     public boolean subtractionSkuStockCount(Long sku, String key, Date endDateTime) {
         long surplus = redisService.decr(key);
+        System.out.println(surplus);
         if (surplus == 0) {
             //库存消耗完了以后发送MQ消息更新数据库库存
             eventPublisher.publish(activitySkuStockZeroMessageEvent.topic(), activitySkuStockZeroMessageEvent.buildEventMessage(sku));
@@ -638,6 +641,7 @@ public class ActivityRespositoryImpl implements IActivityRespository {
                     return;
                 }
             }
+            System.out.println(JSON.toJSONString(raffleActivityOrderRes));
             // 账户对象 - 总
             RaffleActivityAccount raffleActivityAccount = new RaffleActivityAccount();
             raffleActivityAccount.setUserId(raffleActivityOrderRes.getUserId());
@@ -681,6 +685,7 @@ public class ActivityRespositoryImpl implements IActivityRespository {
                     if (null == raffleActivityAccountRes) {
                         raffleActivityAccountDao.insert(raffleActivityAccount);
                     } else {
+                        System.out.println(JSON.toJSONString(raffleActivityAccount)+"2");
                         raffleActivityAccountDao.updateAccountQuota(raffleActivityAccount);
                     }
                     // 4. 更新账户 - 月

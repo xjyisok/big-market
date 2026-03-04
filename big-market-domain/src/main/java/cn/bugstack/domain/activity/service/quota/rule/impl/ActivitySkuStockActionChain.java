@@ -28,6 +28,7 @@ public class ActivitySkuStockActionChain extends AbstractActionChain {
     public boolean action(ActivitySkuEntity activitySkuEntity, ActivityEntity activityEntity, ActivityCountEntity activityCountEntity) {
         log.info("活动责任链-库存信息【有效期，状态】校验开始sku:{},activityId:{}",activitySkuEntity.getSku(),activitySkuEntity.getActivityId());
         boolean status=activityDispatch.subtarctionActivitySkuStock(activitySkuEntity.getSku(),activityEntity.getEndDateTime());
+        System.out.println(status);
         if(status){
             log.info("活动责任链-商品库存处理【有效期库存处理成功】sku:{},activityId:{}",activitySkuEntity.getSku(),activityEntity.getActivityId());
             activityRespository.activitySkuStockConsumeSendQueue(ActivitySkuStockKeyVO.builder()

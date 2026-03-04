@@ -55,7 +55,8 @@ public class RateLimiterAOP {
         String keyAttr=getAttrValue(key,jp.getArgs());
         log.info("aop attrr:{}",keyAttr);
         // 黑名单拦截
-        if (!"all".equals(keyAttr) && rateLimiterAccseeIntertceptor.blackListCount() != 0 && null != blacklist.getIfPresent(keyAttr) && blacklist.getIfPresent(keyAttr) > rateLimiterAccseeIntertceptor.blackListCount()) {
+        if (!"all".equals(keyAttr) && rateLimiterAccseeIntertceptor.blackListCount() != 0 && null != blacklist.getIfPresent(keyAttr)
+                && blacklist.getIfPresent(keyAttr) > rateLimiterAccseeIntertceptor.blackListCount()) {
             log.info("限流-黑名单拦截(24h)：{}", keyAttr);
             return fallbackMethodResult(jp, rateLimiterAccseeIntertceptor.fallbackMethod());
         }

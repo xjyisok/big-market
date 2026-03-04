@@ -24,6 +24,7 @@ public class ActivityArmory implements IActivityArmory, IActivityDispatch {
         return false;
     }
     private void cacheActivitySkuStockCount(Long sku, Integer stockCount) {
+        System.out.println("cacheActivitySkuStockCount:"+sku);
         String key= Constants.RedisKey.ACTIVITY_SKU_STOCK_COUNT_KEY+sku;
         activityRespository.cacheActivitySkuStockCount(key, stockCount);
     }

@@ -25,7 +25,8 @@ public class RaffleActivityPartakeService extends AbstractRaffleActivityPartake{
         ActivityAccountEntity activityAccountEntity=activityRespository.queryActivityAccountByUserId(userId,activityId);
         if(activityAccountEntity==null||activityAccountEntity.getTotalCountSurplus()==0){
             throw new AppException(ResponseCode.ACTIVITY_QUOTA_ERROR.getCode(),ResponseCode.ACTIVITY_QUOTA_ERROR.getInfo());
-        }
+        }//TODO：这里的业务场景是用户总共拥有N次抽奖次数，但是给用户每天和每个月能抽奖的次数设置了上限，镜像文件中保存的实际上是每个月和每天能进行
+        //TODO的最大抽奖次数上限，可能还没到最大次数抽奖上限就把用户自己账户上的所有次数都花完了，此时直接返回异常说明没抽奖次数了
         String month=dateFormatMonth.format(currentDate);
         ActivityAccountMonthEntity activityAccountMonthEntity=activityRespository.queryActivityAccountMonthByUserId(userId,activityId,month);
         if(null!=activityAccountMonthEntity&&activityAccountMonthEntity.getMonthCountSurplus()<=0){
@@ -40,7 +41,9 @@ public class RaffleActivityPartakeService extends AbstractRaffleActivityPartake{
             activityAccountMonthEntity.setMonthCountSurplus(activityAccountEntity.getMonthCount());
             activityAccountMonthEntity.setMonthCount(activityAccountEntity.getMonthCount());
             activityAccountMonthEntity.setMonth(month);
-        }
+        }//TODO到这里说明用户总抽奖次数还没用完，那就要判断月抽奖次数是否达到设定上限了已经达到上限则抛异常日同理
+        //TODO日月过滤缺一不可,假设设定每个月最多抽300次，每天上限30次，可能用户抽的比较快日表刷新的时候每天抽奖次数变成30次，但是这个月就剩下10次机会了
+        //TODO只判断日就会超过月表上限同理如果用户前期抽到比较慢，月表还剩200次，如果只判断月表就会超过日表上限
         String day=dateFormatDay.format(currentDate);
         ActivityAccountDayEntity activityAccountDayEntity=activityRespository.queryActivityAccountDayByUserId(userId,activityId,day);
         if(null!=activityAccountDayEntity&&activityAccountDayEntity.getDayCountSurplus()<=0){
