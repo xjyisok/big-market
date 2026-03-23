@@ -43,7 +43,7 @@ public class DynamicMybatisPlugin implements Interceptor {
         String className = id.substring(0, id.lastIndexOf("."));
         Class<?> clazz = Class.forName(className);
         DBRouterStrategy dbRouterStrategy = clazz.getAnnotation(DBRouterStrategy.class);
-        if (null == dbRouterStrategy || !dbRouterStrategy.splitTable()){
+        if (null == dbRouterStrategy || !dbRouterStrategy.splitTable()) {
             return invocation.proceed();
         }
 
